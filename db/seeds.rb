@@ -54,3 +54,4 @@ second_booking = Booking.create(
   )
 
 puts "all done !"
+
