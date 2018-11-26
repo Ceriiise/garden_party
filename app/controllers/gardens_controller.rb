@@ -3,6 +3,9 @@ class GardensController < ApplicationController
   end
 
   def index
+    @gardens = current_user.gardens
+
+
   end
 
   def show
