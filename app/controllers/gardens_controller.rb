@@ -3,6 +3,7 @@ class GardensController < ApplicationController
   end
 
   def index
+    @gardens = Garden.all
   end
 
   def show
