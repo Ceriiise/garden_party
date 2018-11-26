@@ -1,0 +1,27 @@
+.card-container{
+  width: 60%;
+  padding: 10px 20px;
+}
+
+.card {
+  height: 180px;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px lightgrey;
+}
+
+.card-img {
+  height: 180px;
+  margin-bottom: 20px;
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
