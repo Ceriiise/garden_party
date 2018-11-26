@@ -52,7 +52,8 @@ first_booking = Booking.create(
   end_date: Date.new + 2,
   user: antoine,
   garden: manon_garden,
-  total_price: 300
+  total_price: 300,
+  nbguests: 3
   )
 
 second_booking = Booking.create(
@@ -60,7 +61,8 @@ second_booking = Booking.create(
   end_date: Date.new + 1,
   user: francois,
   garden: philippine_garden,
-  total_price: 100
+  total_price: 100,
+  nbguests: 2
   )
 
 puts "all done !"
