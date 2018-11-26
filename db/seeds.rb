@@ -5,15 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 puts "Destroying all users"
 User.destroy_all
 
 puts "Seeding users"
-manon = User.create!(first_name: 'Manon', last_name: 'Charron', email: 'manoncharron8@gmail.com', password: '123456')
-francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.hameau@gmail.com', password: '234567')
-philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678')
-antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789')
 
+manon = User.create!(email: 'manoncharron8@gmail.com', password: '123456')
+francois = User.create!(email: 'f.hameau@gmail.com', password: '234567')
+philippine = User.create!(email: 'alyssa_phi@hotmail.com', password: '345678')
+antoine = User.create!(email: 'antoine.fourgous1997@gmail.com', password: '456789')
+
+puts "Destroying all gardens"
 Garden.destroy_all
 
 puts "Seeding gardens"
@@ -39,6 +42,8 @@ philippine_garden = Garden.create(
   barbecue: true
   )
 
+puts "Destroying all bookings"
+
 Booking.destroy_all
 
 puts "Seeding bookings"
@@ -47,7 +52,8 @@ first_booking = Booking.create(
   end_date: Date.new + 2,
   user: antoine,
   garden: manon_garden,
-  total_price: 300
+  total_price: 300,
+  nbguests: 3
   )
 
 second_booking = Booking.create(
@@ -55,7 +61,8 @@ second_booking = Booking.create(
   end_date: Date.new + 1,
   user: francois,
   garden: philippine_garden,
-  total_price: 100
+  total_price: 100,
+  nbguests: 2
   )
 
 puts "all done !"
