@@ -10,6 +10,7 @@ puts "Destroying all users"
 User.destroy_all
 
 puts "Seeding users"
+
 manon = User.create!(email: 'manoncharron8@gmail.com', password: '123456')
 francois = User.create!(email: 'f.hameau@gmail.com', password: '234567')
 philippine = User.create!(email: 'alyssa_phi@hotmail.com', password: '345678')
@@ -42,6 +43,7 @@ philippine_garden = Garden.create(
   )
 
 puts "Destroying all bookings"
+
 Booking.destroy_all
 
 puts "Seeding bookings"
@@ -50,7 +52,6 @@ first_booking = Booking.create(
   end_date: Date.new + 2,
   user: antoine,
   garden: manon_garden,
-  nbguests: 3,
   total_price: 300
   )
 
@@ -59,7 +60,6 @@ second_booking = Booking.create(
   end_date: Date.new + 1,
   user: francois,
   garden: philippine_garden,
-  nbguests: 2,
   total_price: 100
   )
 
