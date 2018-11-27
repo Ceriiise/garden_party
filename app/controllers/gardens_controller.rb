@@ -36,9 +36,9 @@ class GardensController < ApplicationController
     redirect_to garden_path(@garden)
   end
 
-  def delete
+  def destroy
     @garden.destroy
-    redirect_to my_garden_path
+    redirect_to my_gardens_path
   end
 
   private
@@ -48,6 +48,6 @@ class GardensController < ApplicationController
   end
 
   def garden_params
-    params.require(:garden).permit(:name, :address, :description, :price, :swimming_pool, :barbecue, :max_guests)
+    params.require(:garden).permit(:name, :address, :description, :price, :swimming_pool, :barbecue, :max_guests, :photo)
   end
 end

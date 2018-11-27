@@ -9,4 +9,5 @@ class Garden < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :description, presence: true
   validates :max_guests, presence: true, numericality: { only_integer: true }
+  mount_uploader :photo, PhotoUploader
 end
