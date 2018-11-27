@@ -6,6 +6,8 @@
   <%= f.input :max_guests, collection: 0..20 %>
   <%= f.input :swimming_pool, as: :boolean %>
   <%= f.input :barbecue, as: :boolean %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
