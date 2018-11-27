@@ -6,7 +6,7 @@
     <% 10.times do %>
       <% @gardens.each do |garden| %>
         <div class='card grid'>
-          <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
+          <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill %>
           <span> <%= garden.name %> </span>
         </div>
       <% end %>

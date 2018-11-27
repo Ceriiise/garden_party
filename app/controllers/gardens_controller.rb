@@ -48,6 +48,6 @@ class GardensController < ApplicationController
   end
 
   def garden_params
-    params.require(:garden).permit(:name, :address, :description, :price, :swimming_pool, :barbecue, :max_guests)
+    params.require(:garden).permit(:name, :address, :description, :price, :swimming_pool, :barbecue, :max_guests, :photo)
   end
 end
