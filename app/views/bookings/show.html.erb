@@ -1,9 +1,15 @@
-<h1><%= @booking.garden.name %> - <%= @booking.start_date %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1><%= @booking.garden.name %> - <%= @booking.start_date %></h1>
 
-<ul>
-  <li>Nights: <%= @booking.nb_nights %></li>
-  <li>Price: <%= @booking.total_price %>€</li>
-  <li>Gustes: <%= @booking.nbguests %></li>
-  <%= link_to 'Add a review', new_review_path(@booking) %>
-  <li>Review: <%= @review.title %></li>
-</ul>
+      <ul>
+        <li>Nights: <%= @booking.nb_nights %></li>
+        <li>Price: <%= @booking.total_price %>€</li>
+        <li>Gustes: <%= @booking.nbguests %></li>
+        <li>Review <%= @review.title %></li> <%= @review.description %>
+        <%= link_to 'Add a review', new_review_path(@booking), class: "btn btn-primary" %>
+      </ul>
+    </div>
+  </div>
+</div>
