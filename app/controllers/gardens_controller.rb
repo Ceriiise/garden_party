@@ -10,7 +10,12 @@ class GardensController < ApplicationController
     @gardens = Garden.all
   end
 
+  def my_gardens
+    @gardens = current_user.gardens
+  end
+
   def show
+    @garden = Garden.find(params[:id])
   end
 
   def create

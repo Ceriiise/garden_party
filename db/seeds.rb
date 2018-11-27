@@ -38,19 +38,21 @@ puts "Seeding bookings"
 first_booking = Booking.create(
   start_date: Date.new,
   end_date: Date.new + 2,
-  user: antoine,
+  user: manon,
   garden: manon_garden,
   nbguests: 3,
-  total_price: 300
+  total_price: 300,
+  nb_nights: 2
   )
 
 second_booking = Booking.create(
   start_date: Date.new,
   end_date: Date.new + 1,
-  user: francois,
+  user: manon,
   garden: philippine_garden,
   nbguests: 2,
-  total_price: 100
+  total_price: 100,
+  nb_nights: 1
   )
 
 puts "all done !"

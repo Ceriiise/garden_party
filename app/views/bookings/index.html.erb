@@ -1,2 +1,16 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>My Bookings</h1>
+<div class='card-container'>
+  <% @bookings.each do |booking| %>
+    <div class='card'>
+      <p><%=link_to garden_path(booking.garden) do %>
+        <%= booking.garden.name %>
+      <%end%></p>
+      <p> Starts : <%= booking.start_date %> </p>
+      <p> End : <%= booking.end_date %> </p>
+      <p> Total nights : <%= booking.nb_nights %> </p>
+      <p> Total price : <%= booking.total_price %> </p>
+    </div>
+  <% end %>
+</div>
+
+
