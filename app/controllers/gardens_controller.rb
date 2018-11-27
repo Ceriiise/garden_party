@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :index]
 
   def new
     @garden = Garden.new
@@ -10,6 +10,7 @@ class GardensController < ApplicationController
   end
 
   def show
+    @garden = Garden.find(params[:id])
   end
 
   def create
