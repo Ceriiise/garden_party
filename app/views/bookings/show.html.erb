@@ -1,2 +1,8 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1><%= @booking.garden.name %> - <%= @booking.start_date %></h1>
+
+<ul>
+  <li>Nights: <%= @booking.nb_nights %></li>
+  <li>Price: <%= @booking.total_price %>€</li>
+  <li>Gustes: <%= @booking.nbguests %></li>
+</ul>
+
