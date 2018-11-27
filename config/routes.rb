@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # get 'rewiews/new'
-  # get 'rewiews/create'
+  # get 'reviews/new'
+  # get 'reviews/create'
   # get 'bookings/index'
   # get 'bookings/show'
   # get 'bookings/new'
