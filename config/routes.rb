@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :create, :new ]
   end
   get 'my_gardens', to: 'gardens#my_gardens'
-  resources :bookings, only: [ :index, :show, :delete ] do
+  resources :bookings, only: [ :index, :show, :destroy ] do
     member do
       resources :reviews, only: [ :new, :create ]
     end
