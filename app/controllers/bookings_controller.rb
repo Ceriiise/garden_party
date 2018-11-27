@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    raise
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new(booking_params)
     @booking.garden = @garden
