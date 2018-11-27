@@ -6,9 +6,11 @@ class GardensController < ApplicationController
   end
 
   def index
+    @gardens = Garden.all
+  end
+
+  def my_gardens
     @gardens = current_user.gardens
-
-
   end
 
   def show
