@@ -1,0 +1,11 @@
+<%= simple_form_for @garden do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :max_guests, collection: 0..20 %>
+  <%= f.input :swimming_pool, as: :boolean %>
+  <%= f.input :barbecue, as: :boolean %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
