@@ -36,9 +36,9 @@ class GardensController < ApplicationController
     redirect_to garden_path(@garden)
   end
 
-  def delete
+  def destroy
     @garden.destroy
-    redirect_to my_garden_path
+    redirect_to my_gardens_path
   end
 
   private
