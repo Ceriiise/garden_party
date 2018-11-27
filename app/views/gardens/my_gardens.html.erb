@@ -1,10 +1,23 @@
-<h1>Gardens#index</h1>
-<%@gardens.each do |garden|  %>
-<%= garden.name  %>
-<%= garden.address %>
-<%= garden.price  %>
-<% end %>
+<div class='map-container'>
+  <h1>My Gardens</h1>
+  <div class='card-container'>
+      <% @gardens.each do |garden| %>
+        <div class='card grid'>
+          <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
+          <span> <%= garden.name %> </span>
+          <span> <%= garden.address %> </span>
+          <span> <%= garden.price %> </span>
+        </div>
+      <% end %>
+  </div>
 
+  <div id='map'></div>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZmhhbSIsImEiOiJjam95aTgyeGUyYnFyM3FsaHg4MHJkY2Y0In0.i9W2cNG5hs6WDU4hibfnQQ';
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9'
+  });
+  </script>
+</div>
 
-
-<p>Find me in app/views/gardens/index.html.erb</p>
