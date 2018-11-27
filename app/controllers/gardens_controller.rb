@@ -1,26 +1,30 @@
 class GardensController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :index]
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def new
     @garden = Garden.new
+    authorize @garden
   end
 
   def index
-    @gardens = Garden.all
+    @gardens = policy_scope(Garden)
   end
 
   def my_gardens
     @gardens = current_user.gardens
+    authorize @gardens
   end
 
   def show
     @garden = Garden.find(params[:id])
+    authorize @garden
   end
 
   def create
     @garden = Garden.new(garden_params)
     @garden.user = current_user
+    authorize @garden
     if @garden.save!
       redirect_to garden_path(@garden)
     else
@@ -29,6 +33,7 @@ class GardensController < ApplicationController
   end
 
   def edit
+    authorize @garden
   end
 
   def update
@@ -37,6 +42,7 @@ class GardensController < ApplicationController
   end
 
   def destroy
+    authorize @garden
     @garden.destroy
     redirect_to my_gardens_path
   end
