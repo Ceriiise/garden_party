@@ -1,2 +1,14 @@
-<h1>Gardens#edit</h1>
-<p>Find me in app/views/gardens/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Edit your garden</h1>
+
+      <%= render 'form' %>
+
+      <hr>
+      <%= link_to gardens_path do %>
+        <i class="fa fa-history"></i> Back to list
+      <% end %>
+    </div>
+  </div>
+</div>
