@@ -5,10 +5,12 @@
   <div class='card-container'>
     <% 10.times do %>
       <% @gardens.each do |garden| %>
-        <div class='card grid'>
-          <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
-          <span> <%= garden.name %> </span>
-        </div>
+        <%= link_to garden_path(garden.id) do %>
+          <div class='card grid'>
+              <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
+              <span> <%= garden.name %> </span>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>

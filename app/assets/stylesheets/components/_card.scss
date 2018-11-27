@@ -7,6 +7,7 @@
   height: 230px;
   background: white;
   margin-bottom: 20px;
+  z-index: 3;
 }
 
 .card:hover {
@@ -26,4 +27,9 @@
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card-link {
+  z-index: 5;
+  background: black;
 }
