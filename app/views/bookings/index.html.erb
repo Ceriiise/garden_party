@@ -9,6 +9,10 @@
       <p> End : <%= booking.end_date %> </p>
       <p> Total nights : <%= booking.nb_nights %> </p>
       <p> Total price : <%= booking.total_price %> </p>
+      <p><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking),
+        method: :delete,
+        data: { confirm: "Are you sure?" }
+      %></p>
     </div>
   <% end %>
 </div>

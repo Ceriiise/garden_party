@@ -20,13 +20,17 @@ class BookingsController < ApplicationController
 
     if @booking.save
       redirect_to gardens_path
-      #@booking.booked = true quand flatpicker sera mis en place
+      # @booking.booked = true quand flatpicker sera mis en place
     else
       render :new
     end
   end
 
-  def delete
+  def destroy
+    @booking = Booking.find(params[:id])
+    @garden_id = @booking.garden_id
+    @booking.destroy
+    redirect_to gardens_path
   end
 
   private
