@@ -1,23 +1,25 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = current_user.bookings
+    @gardens = policy_scope(Garden)
   end
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
     @review = Review.new
   end
 
   def new
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
-    raise
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.garden = @garden
     @booking.user = current_user
 
@@ -31,6 +33,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @garden_id = @booking.garden_id
     @booking.destroy
     redirect_to gardens_path

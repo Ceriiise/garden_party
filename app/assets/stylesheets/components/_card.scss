@@ -34,3 +34,9 @@
   z-index: 5;
   background: black;
 }
+
+@media screen and (max-width: 950px) {
+  .card-container {
+    width: 100%;
+  }
+}
