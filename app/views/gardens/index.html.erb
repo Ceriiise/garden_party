@@ -7,8 +7,13 @@
       <% @gardens.each do |garden| %>
         <%= link_to garden_path(garden.id) do %>
           <div class='card grid'>
+<<<<<<< HEAD
               <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
               <span> <%= garden.name %> </span>
+=======
+            <img src="https://picsum.photos/300/200/?random" class="card-img" alt="<%= garden.name %>">
+            <span> <%= garden.name %> </span>
+>>>>>>> master
           </div>
         <% end %>
       <% end %>
@@ -24,4 +29,3 @@
   });
   </script>
 </div>
-
