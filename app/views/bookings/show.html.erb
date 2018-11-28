@@ -1,17 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h1><%= @booking.garden.name %> - <%= @booking.start_date %></h1>
+<h1>My booking</h1>
 
-      <ul>
-        <li>Nights: <%= @booking.nb_nights %></li>
-        <li>Price: <%= @booking.total_price %>€</li>
-        <li>Gustes: <%= @booking.nbguests %></li>
-        <li>Review <%= @booking.review&.title %>
-        <br>
-        <%= @booking.review&.description %></li>
-        <%= link_to 'Add a review', new_review_path(@booking), class: "btn btn-primary" %>
-      </ul>
+<div class="booking-container">
+    <div class='my-garden-card card-grid'>
+      <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
+      <h5 class="card-title"> <%= @booking.garden.name %> </h5>
+      <h5 class="card-description"><em><%= @booking.garden.description %></em></h5>
+      <div class="card-picto">
+        <% if @booking.garden.swimming_pool == true %>
+          <i class="fas fa-tint on-swim picto"></i>
+        <% else %>
+          <i class="fas fa-tint off picto"></i>
+        <% end %>
+        <% if @booking.garden.barbecue == true %>
+          <i class="fas fa-fire on-fire picto"></i>
+        <% else %>
+          <i class="fas fa-fire off picto"></i>
+        <% end %>
+      </div>
+      <div class="card-price">
+        <h5><%= @booking.garden.price %>€</h5>
+      </div>
     </div>
-  </div>
+    <div class='my-garden-card book-display'>
+      <h5><strong>Start-date: </strong><%= @booking.start_date %></h5>
+      <br>
+      <h5><strong>End-date: </strong><%= @booking.end_date %></h5>
+      <br>
+      <% nights = (@booking.end_date - @booking.start_date).to_i %>
+      <h5><strong>Nights: </strong><%= nights %></h5>
+      <br>
+      <h5><strong>Total price: </strong><%= nights * @booking.garden.price %>€</h5>
+      <br>
+      <%= link_to 'Add a review', new_review_path(@booking), class: "btn btn-primary" %>
+    </div>
 </div>

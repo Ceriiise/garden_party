@@ -8,10 +8,34 @@
       <% end %>
     </div>
   </div>
-    <p><em><%= @garden.description %></em></p>
+  <div class='show-items'>
+    <p id='show-desc'>
+      <strong>Description: <br></strong>
+      <em><%= @garden.description %> <br><br></em>
+      <% if @garden.swimming_pool == true %>
+        <i class="fas fa-tint on-swim picto"></i>
+      <% else %>
+        <i class="fas fa-tint off picto"></i>
+      <% end %>
+      <% if @garden.barbecue == true %>
+        <i class="fas fa-fire on-fire picto"></i>
+      <% else %>
+        <i class="fas fa-fire off picto"></i>
+      <% end %>
+    </p>
+    <p id='show-desc'><strong>Address: <br></strong><em><%= @garden.address %></em></p>
+    <p id='show-desc'>
+      <strong>Review: <br></strong>
+      <% @bookings.each do |booking| %>
+        <%= booking.review %>
+      <% end %>
+    </p>
+  </div>
 
       <% if policy(@garden).edit? %>
-        <%= link_to 'Edit', edit_garden_path(@garden)%>
+        <%= link_to edit_garden_path(@garden) do %>
+          <button class="btn btn-primary">edit</button>
+        <% end %>
       <% end %>
 </div>
 
