@@ -1,4 +1,7 @@
-<p><%= garden.name %></p>
+<%= link_to garden_path(garden) do %>
+  <p><%= garden.name %></p>
+<% end %>
+
 <%= cl_image_tag garden.photo, height: 100, crop: :fill %>
 
 
