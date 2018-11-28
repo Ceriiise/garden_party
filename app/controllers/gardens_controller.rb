@@ -28,6 +28,7 @@ class GardensController < ApplicationController
 
   def show
     @garden = Garden.find(params[:id])
+    @bookings = Booking.where(garden_id: @garden)
     authorize @garden
   end
 
