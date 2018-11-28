@@ -3,6 +3,10 @@
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+}
+.big {
+  width: 100%;
 }
 
 .card {
