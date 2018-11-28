@@ -65,8 +65,17 @@
   justify-content: center;
 }
 
-.card-price {
+.card-description {
   grid-row: 3;
+  grid-column: 1 / span 2;
+  padding: 4px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-price {
+  grid-row: 4;
   grid-column: 2 / span 1;
   padding: 4px;
   margin: 0px;
@@ -80,7 +89,7 @@
   position: relative;
 }
 .card-picto {
-  grid-row: 3;
+  grid-row: 4;
   grid-column: 1 / span 1;
   padding: 4px;
   margin: 0px;
