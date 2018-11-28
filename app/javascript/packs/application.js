@@ -6,6 +6,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 import { displayMap } from '../components/map';
-import { bindSweetAlertButtonDemo } from '../components/banner';
-displayMap();
-bindSweetAlertButtonDemo();
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
