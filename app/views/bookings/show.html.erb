@@ -4,7 +4,7 @@
     <div class='my-garden-card card-grid'>
       <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
       <h5 class="card-title"> <%= @booking.garden.name %> </h5>
-      <h5 class="card-description"><em><%= @booking.garden.description %></em></h5>
+      <!-- <h5 class="card-description"><em><%= @booking.garden.description %></em></h5> -->
       <div class="card-picto">
         <% if @booking.garden.swimming_pool == true %>
           <i class="fas fa-tint on-swim picto"></i>

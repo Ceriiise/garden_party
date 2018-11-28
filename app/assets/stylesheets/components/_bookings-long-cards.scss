@@ -9,6 +9,9 @@
   margin-bottom:15px;
   background-color: white;
   padding-top: 8px;
+    a {
+
+    }
 }
 .bookings-container {
   padding: 0px;
@@ -42,6 +45,11 @@
   opacity: 1;
 }
 .bookings-garden-name {
+  color: $dark-blue;
+  }
+
+.bookings-garden-name:hover {
+  color: $dark-blue;
   }
 .column-name {
   float: left;
