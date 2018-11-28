@@ -27,8 +27,10 @@
       <p id='show-desc'>
          <strong>Reviews: <br></strong><br>
       <% @bookings.each do |booking| %>
+        <% if booking.review.present? %>
           <strong> <%= booking.review.title %> </strong><br>
           <em><%= booking.review.description %></em><br><br>
+        <% end %>
       <% end %>
     </p>
   </div>
