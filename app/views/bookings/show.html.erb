@@ -7,7 +7,9 @@
         <li>Nights: <%= @booking.nb_nights %></li>
         <li>Price: <%= @booking.total_price %>€</li>
         <li>Gustes: <%= @booking.nbguests %></li>
-        <li>Review <%= @review.title %></li> <%= @review.description %>
+        <li>Review <%= @booking.review&.title %>
+        <br>
+        <%= @booking.review&.description %></li>
         <%= link_to 'Add a review', new_review_path(@booking), class: "btn btn-primary" %>
       </ul>
     </div>
