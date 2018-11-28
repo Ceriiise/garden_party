@@ -9,6 +9,18 @@
   width: 100%;
 }
 
+@media screen and (max-width: 950px) {
+  .card-container {
+    width: 100%;
+  }
+  #map-btn {
+    display: none;
+  }
+  .home-header span {
+    display: none;
+  }
+}
+
 .card {
   height: 250px;
   width: 250px;
