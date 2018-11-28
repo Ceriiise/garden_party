@@ -45,7 +45,7 @@ philippine_garden.save
 
 antoine_garden = Garden.create(
   address: '16 villa Gaudelet, 75011 Paris',
-  name: 'Amazing swimming pool in Villa Gaudelet',
+  name: 'Swimming pool in Menilmontant',
   description: "Both our treehouse and yurt listings are unique experiences. They both are adjacent to the Tierra Madre Vineyard Block and have awesome views of the entire Monterey Bay/Pacific Ocean. We are located on 44 acres high atop the Santa Cruz Mountains but close to all the major beaches and the Silicon Valley.",
   price: 150,
   max_guests: 20,
@@ -59,13 +59,14 @@ antoine_garden.save
 
 francois_garden = Garden.create(
   address: '1, rue Jacques-Louis Bernier, 92700 Colombes',
-  name: 'A beautiful lake 10min from Paris',
+  name: 'A natural lake near Paris',
   description: "Dwell in bliss like a local in north shore nirvana. the ultimate retreat for surfers, yogis and nature lovers, this jungle bungalow overlooks one of the most famous surf spots on the north shore. Climb 100 steps up a stone path winding through lush foliage to your tree house nestled among black lava rock, shaded by deep green canopy of Banyan, mango, avocado trees. fall asleep to the lullaby of the waves and awaken to the sweet songs of birds in the trees.",
   price: 100,
   max_guests: 30,
   user: philippine,
   booked: false,
-  barbecue: true
+  barbecue: true,
+  swimming_pool: true
   )
 
 francois_garden.remote_photo_url = 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=605dda29d7945345968d2dfb3eeb672e&auto=format&fit=crop&w=750&q=80'
@@ -87,7 +88,7 @@ manon_garden_two.save
 
 philippine_garden_two = Garden.create(
   address: '160 rue Championnet, 75018 Paris',
-  name: 'Loft with rooftop near Montmartre',
+  name: 'Loft with rooftop',
   description: "In the lower floor is a small library. About Goethe, Schiller, Shakespeare to the modern day. There is a radio with CD-part. A bathroom and a guest toilet are just 30 meters to the main house available for shared use.",
   price: 100,
   max_guests: 30,
@@ -101,13 +102,14 @@ philippine_garden_two.save
 
 antoine_garden_two = Garden.create(
   address: '71 quai de la Seine, 75019 Paris',
-  name: 'Paradise in Paris',
+  name: 'Eden\'s garden',
   description: "You have access to all amenities in the main house just next door, and of course there's toilet, bathroom, shower, fully equipped kitchen and a large lounge to hang out in! Oh - and did we mention the fire bath?",
   price: 150,
   max_guests: 20,
   user: manon,
   booked: false,
-  swimming_pool: true
+  swimming_pool: true,
+  barbecue: true
   )
 
 antoine_garden_two.remote_photo_url = 'https://images.unsplash.com/photo-1439539698758-ba2680ecadb9?ixlib=rb-0.3.5&s=1d4011177a78377e86a79865dddacf8b&auto=format&fit=crop&w=750&q=80'
@@ -135,7 +137,8 @@ manon_garden_third = Garden.create(
   max_guests: 20,
   user: manon,
   booked: false,
-  swimming_pool: true
+  swimming_pool: true,
+  barbecue: true
   )
 
 manon_garden_third.remote_photo_url = 'https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f38859ca09733768682117d67c23d575&auto=format&fit=crop&w=667&q=80'
@@ -188,7 +191,7 @@ Booking.destroy_all
 puts "Seeding bookings"
 first_booking = Booking.create(
   start_date: Date.new,
-  end_date: Date.new + 2,
+  end_date: Date.new,
   user: manon,
   garden: manon_garden,
   nbguests: 3,
@@ -198,7 +201,7 @@ first_booking = Booking.create(
 
 second_booking = Booking.create(
   start_date: Date.new,
-  end_date: Date.new + 1,
+  end_date: Date.new,
   user: manon,
   garden: philippine_garden,
   nbguests: 2,
