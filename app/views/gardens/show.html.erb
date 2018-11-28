@@ -3,5 +3,8 @@
 <%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
 <p><%= @garden.description %></p>
 
-<%= link_to 'Edit', edit_garden_path(@garden)%>
+
 <%= link_to 'Book', new_garden_booking_path(@garden)%>
+  <% if policy(@garden).edit? %>
+    <%= link_to 'Edit', edit_garden_path(@garden)%>
+  <% end %>

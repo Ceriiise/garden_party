@@ -1,9 +1,13 @@
-<h3>Add a review</h3>
-<%= simple_form_for [@booking, @review], :url => reviews_path(@booking.id)  do |f| %>
-  <%= f.input :title %>
-  <%= f.input :rating, collection: 0..5 %>
-  <%= f.input :description %>
-  <%= f.submit class: "btn btn-primary"%>
-<% end %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Add a review</h3>
+      <%= simple_form_for [@booking, @review], :url => reviews_path(@booking.id)  do |f| %>
+        <%= f.input :title %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :description %>
+        <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>
