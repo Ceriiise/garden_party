@@ -9,6 +9,16 @@ class GardensController < ApplicationController
 
   def index
     @gardens = policy_scope(Garden)
+
+    @gardens = Garden.where.not(latitude: nil, longitude: nil)
+
+    @markers = @gardens.map do |garden|
+      {
+        lng: garden.longitude,
+        lat: garden.latitude,
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { garden: garden })
+      }
+    end
   end
 
   def my_gardens
