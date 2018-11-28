@@ -29,8 +29,8 @@
   grid-row: 1;
   background: white;
   margin: 0 !important;
+  box-shadow: 0 0 5px lightgrey;
 }
-
 
 .show-btn {
   grid-column: 1;
@@ -47,6 +47,7 @@
 #show-desc {
   background: white;
   padding: 20px;
+  box-shadow: 0 0 5px lightgrey;
 }
 
 #show-picto {
