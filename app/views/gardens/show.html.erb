@@ -1,10 +1,18 @@
-<h1><%= @garden.name %></h1>
+<div class='show-container'>
+  <div class='show-content show-grid'>
+    <%= cl_image_tag @garden.photo, class:'show-img'%>
+    <div class='show-title'>
+      <h1><%= @garden.name %></h1>
+      <%= link_to new_garden_booking_path(@garden) do%>
+        <button class="btn btn-primary show-btn">Book</button>
+      <% end %>
+    </div>
+  </div>
+    <p><em><%= @garden.description %></em></p>
 
-<%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
-<p><%= @garden.description %></p>
+      <% if policy(@garden).edit? %>
+        <%= link_to 'Edit', edit_garden_path(@garden)%>
+      <% end %>
+</div>
 
 
-<%= link_to 'Book', new_garden_booking_path(@garden)%>
-  <% if policy(@garden).edit? %>
-    <%= link_to 'Edit', edit_garden_path(@garden)%>
-  <% end %>
