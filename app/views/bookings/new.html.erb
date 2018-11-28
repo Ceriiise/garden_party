@@ -1,8 +1,18 @@
-<h1>Book a garden</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Book a garden</h1>
 
-<%= simple_form_for [@garden, @booking]  do |f| %>
-  <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
-  <%= f.input :end_date, as: :string, required: true, input_html: {id: "range_end"} %>
-  <%= f.input :nbguests %> <%#= checker si nbguests est bien < à @garden.max_guests=%>
-  <%= f.submit %>
-<% end %>
+      <%= simple_form_for [@garden, @booking]  do |f| %>
+        <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
+        <%= f.input :end_date, as: :string, required: true, input_html: {id: "range_end"} %>
+        <%= f.input :nbguests, collection: 0..20 %> <%#= checker si nbguests est bien < à @garden.max_guests=%>
+        <%= f.submit %>
+      <% end %>
+      <hr>
+        <%= link_to gardens_path do %>
+        <i class="fa fa-history"></i> Back to garden
+      <% end %>
+    </div>
+  </div>
+</div>
