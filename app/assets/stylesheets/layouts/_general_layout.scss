@@ -1,14 +1,32 @@
 
-h2 {
+h1 {
+  font-family: "Black Han Sans";
+  color: $dark-blue;
+  font-size: 32px;
+  border-bottom: 10px solid $turquoise;
+}
 
+
+h2 {
+  font-family: "Black Han Sans";
+  font-size: 10px;
 }
 
 h3 {
 
 }
 
-p {
+h5 {
+  font-family: $body-font;
+  color: $dark-blue;
+}
 
+h5:hover {
+  color: $pink;
+}
+
+p {
+  color: $dark-blue;
 }
 
 a {
@@ -17,4 +35,35 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: $dark-blue;
 }
+
+.alert {
+  position: sticky;
+  top: 70px;
+  margin-bottom: 5px;
+  z-index: 999;
+}
+
+label {
+  color: $dark-blue;
+}
+
+.banner-content {
+  .btn {
+    background-color: $pink;
+    border: none;
+  }
+  .btn:hover {
+    border: solid 5px $pink
+  }
+  h1 {
+    color: white;
+    border-bottom: none;
+  }
+}
+
+
+
+
+

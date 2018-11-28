@@ -41,12 +41,17 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: $pink;
+  font-size: 16px;
+  border-bottom: 5px solid white;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $dark-blue;
+  border-bottom: 5px solid white;
   text-decoration: none;
+}
+.navbar-wagon-link:active {
+  border-bottom: 5px solid $turquoise;
 }
 
 /* Dropdown menu */
@@ -78,4 +83,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.logo {
+  font-family: "Black Han Sans";
+  color: $pink;
+  font-size: 32px;
+}
+
+.logo:hover {
+  font-size: 33px;
 }
