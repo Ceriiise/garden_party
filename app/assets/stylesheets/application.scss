@@ -13,18 +13,3 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.alert {
-  position: sticky;
-  top: 70px;
-  margin-bottom: 5px;
-  z-index: 999;
-}

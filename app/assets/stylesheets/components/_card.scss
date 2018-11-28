@@ -37,6 +37,7 @@
   z-index: 3;
   background: white;
   border: 10px solid white;
+  box-shadow: 0 0 20px lightgrey;
 }
 
 .my-garden-card {
@@ -50,7 +51,7 @@
 }
 
 .card:hover {
-  box-shadow: 0 0 10px lightgrey;
+  box-shadow: 0 0 50px lightgrey;
 }
 
 .card-img {
@@ -119,11 +120,11 @@
 }
 
 .on-swim {
-  color: blue;
+  color: $turquoise;
 }
 
 .on-fire {
-  color: red;
+  color: $pink;
 }
 
 .off {
