@@ -24,10 +24,11 @@
       <% end %>
     </p>
     <p id='show-desc'><strong>Address: <br></strong><em><%= @garden.address %></em></p>
-    <p id='show-desc'>
-      <strong>Review: <br></strong>
+      <p id='show-desc'>
+         <strong>Reviews: <br></strong><br>
       <% @bookings.each do |booking| %>
-        <%= booking.review %>
+          <strong> <%= booking.review.title %> </strong><br>
+          <em><%= booking.review.description %></em><br><br>
       <% end %>
     </p>
   </div>
@@ -38,5 +39,4 @@
         <% end %>
       <% end %>
 </div>
-
 
