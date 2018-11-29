@@ -6,7 +6,7 @@ const displayMap = () => {
 
   if (btn) {
     btn.addEventListener('click', () => {
-      console.log('hello')
+      console.log('hello');
       map.classList.toggle('disabled');
       cards.classList.toggle('big');
     });
