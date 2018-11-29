@@ -41,11 +41,11 @@ class GardensController < ApplicationController
   end
 
   def show
-    @garden = Garden.find(params[:id])
     @bookings = Booking.where(garden_id: @garden)
     authorize @garden
     @booking = Booking.new
     authorize @booking
+    @dates = update_availabilities
   end
 
   def create
@@ -83,5 +83,14 @@ class GardensController < ApplicationController
 
   def garden_params
     params.require(:garden).permit(:name, :address, :description, :price, :swimming_pool, :barbecue, :max_guests, :photo)
+  end
+
+  def update_availabilities
+    @garden.bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to: booking.end_date
+      }
+    end
   end
 end

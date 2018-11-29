@@ -92,7 +92,7 @@
       </div>
     </div>
 
-    <div class='show-booking-form'>
+    <div class='show-booking-form' id="dates-for-flatpickr" data-flatpickr="<%= @dates.to_json %>">
       <h1>Book this garden</h1>
         <%= simple_form_for [@garden, @booking]  do |f| %>
           <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
@@ -103,5 +103,4 @@
     </div>
   </div>
 </div>
-
 

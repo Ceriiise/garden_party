@@ -13,7 +13,6 @@ loadDynamicBannerText();
 displayMap();
 
 const addressInput = document.getElementById('garden_address');
-console.log(addressInput)
 if (addressInput) {
   places({ container: addressInput });
 }

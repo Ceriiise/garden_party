@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = current_user.bookings
     @gardens = policy_scope(Garden)
@@ -23,20 +22,19 @@ class BookingsController < ApplicationController
     @booking.garden = @garden
     @booking.user = current_user
     @booking.nb_nights = (@booking.end_date - @booking.start_date).to_i
-
     if @booking.save
       redirect_to booking_path(@booking)
-      # @booking.booked = true quand flatpicker sera mis en place
     else
       render :new
     end
+    update_availabilities(@garden)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
-    @garden_id = @booking.garden_id
     @booking.destroy
+    @garden = @booking.garden
     redirect_to bookings_path
   end
 
