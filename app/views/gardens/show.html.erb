@@ -25,14 +25,16 @@
     </p>
     <p id='show-desc'><strong>Address: <br></strong><em><%= @garden.address %></em></p>
       <p id='show-desc'>
-         <strong>Reviews: <br></strong><br>
-      <% @bookings.each do |booking| %>
-        <% if booking.review.present? %>
-          <strong> <%= booking.review.title %> </strong><br>
-          <em><%= booking.review.description %></em><br><br>
-        <% end %>
-      <% end %>
-    </p>
+        <div><strong>Reviews: <br></strong><br></div>
+            <div> <% @bookings.each do |booking| %>
+              <% if booking.review.present? %>
+                <strong> <%= booking.review.title %> </strong><br>
+                <em><%= booking.review.description %></em><br><br>
+              <% end %>
+              <% end %>
+            </div>
+
+      </p>
   </div>
 
       <% if policy(@garden).edit? %>
