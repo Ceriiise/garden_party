@@ -3,6 +3,38 @@
     <%= cl_image_tag @garden.photo, class:'show-img'%>
     <div class='show-card'>
       <h1><%= @garden.name %></h1>
+      <%= link_to new_garden_booking_path(@garden) do%>
+        <button class="btn btn-primary show-btn">Book</button>
+      <% end %>
+    </div>
+  </div>
+  <div class='show-items'>
+    <p id='show-desc'>
+      <strong>Description: <br></strong>
+      <%= @garden.description %> <br><br>
+      <% if @garden.swimming_pool == true %>
+        <i class="fas fa-tint on-swim picto"></i>
+      <% else %>
+        <i class="fas fa-tint off picto"></i>
+      <% end %>
+      <% if @garden.barbecue == true %>
+        <i class="fas fa-fire on-fire picto"></i>
+      <% else %>
+        <i class="fas fa-fire off picto"></i>
+      <% end %>
+    </p>
+    <p id='show-desc'><strong>Address: <br></strong><em><%= @garden.address %></em></p>
+      <p id='show-desc'>
+        <div><strong>Reviews: <br></strong><br></div>
+            <div> <% @bookings.each do |booking| %>
+              <% if booking.review.present? %>
+                <strong> <%= booking.review.title %> </strong><br>
+                <em><%= booking.review.description %></em><br><br>
+              <% end %>
+              <% end %>
+            </div>
+
+      </p>
       <p><em>"<%= @garden.description %>"</em></p>
       <div class='show-user-card'>
         <%= @garden.user.email %>

@@ -27,7 +27,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-    update_availabilities(@garden)
   end
 
   def destroy
