@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'profiles/show'
   # get 'reviews/new'
   # get 'reviews/create'
   # get 'bookings/index'
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
       resources :reviews, only: [ :new, :create ]
     end
   end
+  resources :profiles
 end

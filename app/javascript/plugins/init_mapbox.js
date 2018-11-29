@@ -27,6 +27,8 @@ const initMapbox = () => {
       style: 'mapbox://styles/manoncha/cjp1ajj6810hf2slm9paw9o9h'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(map);
+    console.log(markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
