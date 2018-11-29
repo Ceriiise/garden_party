@@ -18,6 +18,7 @@
 
 .garden-bookings-container {
   background-color: white;
+  opacity: 0.8;
   box-shadow: 0 0 5px lightgrey;
   padding: 20px !important;
   margin-bottom: 40px;
@@ -28,6 +29,7 @@
 
 .garden-reviews-container {
   background-color: white;
+  opacity: 0.8;
   box-shadow: 0 0 5px lightgrey;
   padding: 20px !important;
 }
@@ -63,6 +65,7 @@
   grid-column: 1;
   grid-row: 1;
   background: white;
+  opacity: 0.8;
   margin: 0 !important;
   box-shadow: 0 0 5px lightgrey;
 }
@@ -70,6 +73,7 @@
 .show-booking-form {
   width: 30vw;
   background-color: white;
+  opacity: 0.8;
   box-shadow: 0 0 5px lightgrey;
   padding: 20px;
   margin-left: 40px;
@@ -119,3 +123,4 @@
   display: block;
   width: auto;
 }
+

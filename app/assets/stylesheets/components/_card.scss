@@ -243,7 +243,9 @@
   color: white;
 }
 .new-garden-card{
-        background-color: white;
+    background-color: white;
+    box-shadow: 0 0 5px lightgrey;
+    opacity: 0.8;
     position: relative;
     top: 13px;
     width: 594px;
