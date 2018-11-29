@@ -2,6 +2,15 @@
   margin: 30px;
 }
 
+.show-details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.reviews-and-bookings-container {
+  width: 70vw;
+}
+
 .show-content {
  height: 500px;
  width: 100%;
@@ -21,15 +30,25 @@
   grid-column: 3;
 }
 
-.show-title {
+.show-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   padding: 20px;
   grid-column: 1;
   grid-row: 1;
   background: white;
   margin: 0 !important;
   box-shadow: 0 0 5px lightgrey;
+}
+
+.show-booking-form {
+  width: 30vw;
+  background-color: white;
+  box-shadow: 0 0 5px lightgrey;
+  padding: 10px;
+  margin-top: 10px;
+
 }
 
 .show-btn {
@@ -40,11 +59,21 @@
   left: -166px;
 }
 
+.show-icons {
+  display: flex
+}
+
 .show-items {
   margin: 30px 20%;
 }
 
-#show-desc {
+.show-bookings {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.show-reviews {
   background: white;
   padding: 20px;
   box-shadow: 0 0 5px lightgrey;
@@ -52,4 +81,12 @@
 
 #show-picto {
   margin-bottom: 30px;
+}
+
+.picto {
+  align-items: center;
+}
+
+.show-buttons {
+  display: flex;
 }
