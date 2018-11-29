@@ -1,15 +1,45 @@
 <div class='home-header'>
-  <h1>Gardens</h1>
-  <!-- <button id='map-btn'>display map</button> -->
-  <span>hide map</span>
+  <label class="switch">
   <input id="map-btn" type="checkbox" data-toggle="toggle">
+  <span class="slider round"></span>
+</label>
 </div>
 
-<div class='map-container'>
+<div class='search'>
+  <%= form_tag gardens_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a garden"
+    %>
+  <% end %>
+</div>
 
+
+
+
+<div class='map-container'>
   <div class='card-container'>
-    <% 10.times do %>
-      <% @gardens.each do |garden| %>
+
+    <div class='search reco'>
+      <%= link_to gardens_path do %>
+        <div class='top-card search-card'>
+          <h4>All the gardens</h4>
+        </div>
+      <% end %>
+      <%= link_to gardens_path(swim: "true") do %>
+        <div class='swim-card search-card'>
+          <h4>Swimming pool</h4>
+        </div>
+      <% end %>
+      <%= link_to gardens_path(bbq: "true") do %>
+        <div class='bbq-card search-card'>
+          <h4>Barbecue</h4>
+        </div>
+      <% end %>
+    </div>
+
+      <% @gardens_list.each do |garden| %>
         <%= link_to garden_path(garden.id) do %>
           <div class='card card-grid'>
             <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
@@ -32,7 +62,6 @@
           </div>
         <% end %>
       <% end %>
-    <% end %>
   </div>
 
   <div
