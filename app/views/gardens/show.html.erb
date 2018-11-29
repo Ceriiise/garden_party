@@ -1,7 +1,7 @@
 <div class='show-container'>
   <div class='show-content show-grid'>
     <%= cl_image_tag @garden.photo, class:'show-img'%>
-    <div class='show-title'>
+    <div class='show-card'>
       <h1><%= @garden.name %></h1>
       <%= link_to new_garden_booking_path(@garden) do%>
         <button class="btn btn-primary show-btn">Book</button>
@@ -35,12 +35,105 @@
             </div>
 
       </p>
-  </div>
-
-      <% if policy(@garden).edit? %>
-        <%= link_to edit_garden_path(@garden) do %>
-          <button class="btn btn-primary">edit</button>
+      <p><em>"<%= @garden.description %>"</em></p>
+      <div class='show-user-card'>
+        <%= @garden.user.email %>
+      </div>
+      <br>
+      <div class='show-icons'>
+        <% if @garden.swimming_pool == true %>
+          <i class="fas fa-tint on-swim picto"></i>
+        <% else %>
+          <i class="fas fa-tint off picto"></i>
         <% end %>
-      <% end %>
+        <% if @garden.barbecue == true %>
+          <i class="fas fa-fire on-fire picto"></i>
+        <% else %>
+          <i class="fas fa-fire off picto"></i>
+        <% end %>
+      </div>
+      <br>
+      <p>Address: <%= @garden.address %></p>
+      <div class="show-buttons">
+
+        <% if policy(@garden).edit? %>
+          <%= link_to edit_garden_path(@garden) do %>
+            <button class="btn btn-primary">edit</button>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  <div class="show-details-container">
+    <div class="reviews-and-bookings-container">
+      <div class='garden-bookings-container'>
+        <h1>Bookings: </h1>
+        <div class="booking-cards">
+          <% @garden.bookings.each do |booking| %>
+            <%= link_to booking_path(booking) do%>
+              <div class='booking-container row'>
+                <div class='column-user-infos'>
+                  <%= booking.user.email %>
+                </div>
+                <div class='column-booking-date'>
+                  <p>from : <%= booking.start_date %></p>
+                  <p>to : <%= booking.end_date %></p>
+                </div>
+                <div id="people-number" class="column-number-people-max">
+                  <% if booking.garden.max_guests > 1 %>
+                    <i class="fas fa-users bookings-garden-name"></i>
+                  <% else %>
+                    <i class="fa fa-user bookings-garden-name"></i>
+                  <% end %>
+                  <p id='number-person'>X <%= booking.garden.max_guests %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class='garden-reviews-container'>
+        <h1>Reviews: </h1>
+        <div class="review-cards">
+          <% @garden.bookings.each do |booking| %>
+            <% if booking.review.present? %>
+              <%= link_to booking_path(booking) do%>
+                <div class='booking-container row'>
+                  <div class='column-user-infos'>
+                    <%= booking.review.user.email %>
+                  </div>
+                  <div class='review-description'>
+                    <em>"<%= booking.review.description  %>"</em>
+                  </div>
+                  <div class='review-rating'>
+                    <% booking.review.rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <%  (5 - booking.review.rating).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  </span>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class='show-booking-form'>
+      <h1>Book this garden</h1>
+        <%= simple_form_for [@garden, @booking]  do |f| %>
+          <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
+          <%= f.input :end_date, as: :string, required: true, input_html: {id: "range_end"} %>
+          <%= f.input :nbguests, collection: 0..20 %>
+          <%= f.button :submit, class: 'btn btn-primary'%>
+        <% end %>
+    </div>
+  </div>
 </div>
+
 

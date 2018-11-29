@@ -1,0 +1,6 @@
+<%= simple_form_for [@garden, @booking]  do |f| %>
+  <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
+  <%= f.input :end_date, as: :string, required: true, input_html: {id: "range_end"} %>
+  <%= f.input :nbguests, collection: 0..20 %> <%#= checker si nbguests est bien < à @garden.max_guests=%>
+  <%= f.submit %>
+<% end %>

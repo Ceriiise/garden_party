@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = current_user.bookings
     @gardens = policy_scope(Garden)
@@ -7,12 +8,12 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    @booking.nb_nights = (@booking.end_date - @booking.start_date).to_i
+    @booking.total_price = (@booking.nb_nights * @booking.garden.price)
+    @review = Review.new
   end
 
   def new
-    @garden = Garden.find(params[:garden_id])
-    @booking = Booking.new
-    authorize @booking
   end
 
   def create
@@ -21,6 +22,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.garden = @garden
     @booking.user = current_user
+    @booking.nb_nights = (@booking.end_date - @booking.start_date).to_i
 
     if @booking.save
       redirect_to booking_path(@booking)
