@@ -1,10 +1,12 @@
-.card-container{
+.card-container {
   width: 60%;
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
 
 .my-gardens-container {
   width: 100%;
@@ -14,7 +16,11 @@
   justify-content: space-around;
 }
 .big {
-  width: 100%;
+  width: 100% !important;
+}
+
+.large {
+  width: calc(100% - 60px) !important;
 }
 
 @media screen and (max-width: 950px) {
@@ -167,4 +173,58 @@
 
 .off {
   color: lightgrey;
+}
+
+.top-card {
+  display: flex;
+  grid-column: 1;
+  width: auto;
+  height: 90px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  background-position: 0px 0px;
+  background:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('jardin.jpg') no-repeat center;
+  box-shadow: 0 0 5px lightgrey;
+  background-size: cover !important;
+}
+
+.swim-card {
+  display: flex;
+  grid-column: 2;
+  width: auto;
+  height: 90px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  background-position: 0px 0px;
+  background:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('piscine.jpg') no-repeat center;
+  box-shadow: 0 0 5px lightgrey;
+  background-size: cover !important;
+}
+.bbq-card {
+  display: flex;
+  grid-column: 3;
+  width: auto;
+  height: 90px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  background-position: 0px 0px;
+  background:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('barbecue.jpg') no-repeat center;
+  box-shadow: 0 0 5px lightgrey;
+  background-size: cover !important;
+}
+.search-card:hover {
+  box-shadow: 0 0 30px lightgrey;
+  opacity: 0.95;
+}
+.reco {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  margin: 0 !important;
+}
+.search-card h4 {
+  color: white;
 }
