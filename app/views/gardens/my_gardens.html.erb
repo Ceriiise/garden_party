@@ -8,8 +8,7 @@
     <%= link_to garden_path(garden.id) do %>
       <div class='my-garden-card card-grid'>
         <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
-        <h5 class="card-title"> <%= garden.name %> </h5>
-        <h5 class="card-description"> <%= garden.description %> </h5>
+        <h1 class="card-title"> <%= garden.name %> </h1>
         <div class="card-picto">
           <% if garden.swimming_pool == true %>
             <i class="fas fa-tint on-swim picto"></i>

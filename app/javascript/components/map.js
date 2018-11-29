@@ -1,7 +1,7 @@
 
 const displayMap = () => {
-  const btn = document.querySelector('#map-btn');
-  const map = document.querySelector('#map');
+  const btn = document.getElementById("map-btn");
+  const map = document.getElementById('#map');
   const cards = document.querySelector(".card-container")
 
   btn.addEventListener('click', () => {
