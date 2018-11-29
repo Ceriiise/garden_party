@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     @garden = @booking.garden
-    redirect_to bookings_path
+    redirect_to garden_path(@garden)
   end
 
   private

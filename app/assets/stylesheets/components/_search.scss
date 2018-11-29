@@ -1,6 +1,7 @@
 .search {
   width: 100%;
   padding: 0px 0px;
+  justify-content: center;
   a {
     margin: 0px;
   }
@@ -9,5 +10,11 @@
 @media screen and (max-width: 950px) {
   .search {
     width: 100%;
-  }}
+    margin: 20px;
+  }
+}
 
+#query {
+  width: auto;
+  margin: 20px 30px;
+}
