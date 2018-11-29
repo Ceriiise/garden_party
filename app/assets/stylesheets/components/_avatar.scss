@@ -1,0 +1,14 @@
+.avatar-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 3;
+  object-fit: contain;
+}
+
+.show-profile-form {
+  background-color: white;
+  box-shadow: 0 0 5px lightgrey;
+  padding: 10px;
+  margin-top: 10px;
+}

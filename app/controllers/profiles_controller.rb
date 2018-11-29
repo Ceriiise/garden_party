@@ -6,6 +6,10 @@ before_action :set_profile, only: [:show, :edit, :update, :destroy]
     authorize @profile
   end
 
+  def edit
+    authorize @profile
+  end
+
   def update
     if @profile.update(profile_params)
       authorize @profile
@@ -22,6 +26,6 @@ before_action :set_profile, only: [:show, :edit, :update, :destroy]
   end
 
   def profile_params
-    params.require(:user).permit(:photo, :first_name, :last_name, :email)
+    params.require(:user).permit(:photo, :first_name, :last_name, :email, :description)
   end
 end
