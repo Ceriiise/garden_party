@@ -11,14 +11,22 @@ class GardensController < ApplicationController
     @gardens = policy_scope(Garden)
 
     if params[:query].present?
-      @gardens_list = Garden.where("name @@ ?", "%#{params[:query]}%")
+      sql_query = " \
+              gardens.name @@ :query \
+              OR gardens.address @@ :query \
+            "
+      @gardens_list = Garden.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:swim].present?
+      @gardens_list = Garden.where(swimming_pool: true) if params[:swim] == 'true'
+    elsif params[:bbq].present?
+      @gardens_list = Garden.where(barbecue: true) if params[:bbq] == 'true'
     else
       @gardens_list = Garden.all
     end
 
     @gardens = Garden.where.not(latitude: nil, longitude: nil)
 
-    @markers = @gardens.map do |garden|
+    @markers = @gardens_list.map do |garden|
       {
         lng: garden.longitude,
         lat: garden.latitude,

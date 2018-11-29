@@ -11,6 +11,7 @@ gem 'redis'
 
 gem 'devise'
 gem "pundit"
+gem 'pg_search'
 
 gem "geocoder"
 

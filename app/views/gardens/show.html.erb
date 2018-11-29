@@ -37,29 +37,33 @@
     <div class="reviews-and-bookings-container">
       <div class='garden-bookings-container'>
         <h1>Bookings: </h1>
-        <div class="booking-cards">
-          <% @garden.bookings.each do |booking| %>
-            <%= link_to booking_path(booking) do%>
-              <div class='booking-container row'>
-                <div class='column-user-infos'>
-                  <%= booking.user.email %>
-                </div>
-                <div class='column-booking-date'>
-                  <p>from : <%= booking.start_date %></p>
-                  <p>to : <%= booking.end_date %></p>
-                </div>
-                <div id="people-number" class="column-number-people-max">
-                  <% if booking.garden.max_guests > 1 %>
-                    <i class="fas fa-users bookings-garden-name"></i>
-                  <% else %>
-                    <i class="fa fa-user bookings-garden-name"></i>
-                  <% end %>
-                  <p id='number-person'>X <%= booking.garden.max_guests %></p>
-                </div>
-              </div>
+
+          <ul>
+            <% @garden.bookings.each do |booking| %>
+              <%= link_to booking_path(booking) do%>
+                <li>
+                  <div class='booking-container'>
+                    <div class='column-user-infos'>
+                      <%= booking.user.email %>
+                    </div>
+                    <div class='column-booking-date'>
+                      <p>from : <%= booking.start_date %></p>
+                      <p>to : <%= booking.end_date %></p>
+                    </div>
+                    <div id="people-number" class="column-number-people-max">
+                      <% if booking.garden.max_guests > 1 %>
+                        <i class="fas fa-users bookings-garden-name"></i>
+                      <% else %>
+                        <i class="fa fa-user bookings-garden-name"></i>
+                      <% end %>
+                      <p id='number-person'>X <%= booking.garden.max_guests %></p>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </ul>
+
       </div>
 
       <div class='garden-reviews-container'>
