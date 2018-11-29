@@ -16,7 +16,7 @@ puts "Seeding gardens"
 manon_garden = Garden.create(
   address: '20 rue des Abbesses, 75018 Paris',
   name: 'Nature in the heart of Paris',
-  description: "We have several hangouts in our garden, and our pool is beautiful lit in the evening and turquoise in the daytime just inviting you to jump in. Upstairs is the open living area. The lazy couch on the veranda is overlooking the palm trees (TREEHOUSE) our beautiful garden and pool and has some ocean view aswell. It's the perfect place to wake up and relax drinking your coffee or tea. You can enjoy a nice ocean breeze when you feel its too warm to be outside in the sun or just when you feel the need to be nicely lazy..Inside there is a big (180 x 240) daybed with mosquito net if you need it. Downstairs there is the bedroom, kitchenette, bathroom and a second veranda. We have a rain shower with hot water, there is a standing fan and AC in the bedroom. In the bedroom there is a Flatscreen TV with some channels and movies on demand. The TV has a USB plug so you could take your favo movies or series to watch. We also have a dvd player. We use Indihome fiber for the quickest internet in Bali, so you can stream and download.",
+  description: "We have several hangouts in our garden, and our pool is beautiful lit in the evening and turquoise in the daytime just inviting you to jump in.",
   price: 80,
   max_guests: 20,
   user: manon,
@@ -46,7 +46,7 @@ philippine_garden.save
 antoine_garden = Garden.create(
   address: '16 villa Gaudelet, 75011 Paris',
   name: 'Swimming pool in Menilmontant',
-  description: "Both our treehouse and yurt listings are unique experiences. They both are adjacent to the Tierra Madre Vineyard Block and have awesome views of the entire Monterey Bay/Pacific Ocean. We are located on 44 acres high atop the Santa Cruz Mountains but close to all the major beaches and the Silicon Valley.",
+  description: "Both our treehouse and yurt listings are unique experiences. They both are adjacent to the Tierra Madre Vineyard Block and have awesome views of the entire Monterey Bay/Pacific Ocean.",
   price: 150,
   max_guests: 20,
   user: manon,
@@ -60,13 +60,13 @@ antoine_garden.save
 francois_garden = Garden.create(
   address: '1, rue Jacques-Louis Bernier, 92700 Colombes',
   name: 'A natural lake near Paris',
-  description: "Dwell in bliss like a local in north shore nirvana. the ultimate retreat for surfers, yogis and nature lovers, this jungle bungalow overlooks one of the most famous surf spots on the north shore. Climb 100 steps up a stone path winding through lush foliage to your tree house nestled among black lava rock, shaded by deep green canopy of Banyan, mango, avocado trees. fall asleep to the lullaby of the waves and awaken to the sweet songs of birds in the trees.",
+  description: "Dwell in bliss like a local in north shore nirvana. the ultimate retreat for surfers, yogis and nature lovers, this jungle bungalow overlooks one of the most famous surf spots on the north shore.",
   price: 100,
   max_guests: 30,
   user: philippine,
   booked: false,
   barbecue: true,
-  swimming_pool: true
+  swimming_pool: true,
   )
 
 francois_garden.remote_photo_url = 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=605dda29d7945345968d2dfb3eeb672e&auto=format&fit=crop&w=750&q=80'

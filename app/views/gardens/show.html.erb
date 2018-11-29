@@ -1,7 +1,7 @@
 <div class='show-container'>
   <div class='show-content show-grid'>
-    <%= cl_image_tag @garden.photo, class:'show-img'%>
-    <div class='show-card'>
+    <%= cl_image_tag @garden.photo, class:'show-img slide-in-right'%>
+    <div class='show-card slide-in-left'>
       <h1><%= @garden.name %></h1>
       <%= link_to new_garden_booking_path(@garden) do%>
         <button class="btn btn-primary show-btn">Book</button>
@@ -35,7 +35,7 @@
 
   <div class="show-details-container">
     <div class="reviews-and-bookings-container">
-      <div class='garden-bookings-container'>
+      <div class='garden-bookings-container slide-in-left'>
         <h1>Bookings: </h1>
 
           <ul>
@@ -77,7 +77,7 @@
 
       </div>
 
-      <div class='garden-reviews-container'>
+      <div class='garden-reviews-container slide-in-bottom'>
         <h1>Reviews: </h1>
         <div class="review-cards">
           <% @garden.bookings.each do |booking| %>
@@ -107,7 +107,7 @@
       </div>
     </div>
 
-    <div class='show-booking-form' id="dates-for-flatpickr" data-flatpickr="<%= @dates.to_json %>">
+    <div class='show-booking-form slide-in-right' id="dates-for-flatpickr" data-flatpickr="<%= @dates.to_json %>">
       <h1>Book this garden</h1>
         <%= simple_form_for [@garden, @booking]  do |f| %>
           <%= f.input :start_date, as: :string, required: true, input_html: {id: "range_start"}%>
