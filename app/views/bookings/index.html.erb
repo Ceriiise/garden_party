@@ -2,7 +2,7 @@
   <h1>My bookings</h1>
 </div>
 
-<div class='bookings-container'>
+<div class='bookings-container slide-in-top'>
   <% @bookings.each do |booking| %>
     <div class='booking-container row'>
       <%= link_to booking.garden.name, garden_path(booking.garden), class: "bookings-garden-name column-name" %>
