@@ -1,36 +1,40 @@
-<h1>My booking</h1>
-
 <div class="booking-container">
-    <div class='my-garden-card card-grid'>
-      <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
-      <h5 class="card-title"> <%= @booking.garden.name %> </h5>
-      <!-- <h5 class="card-description"><em><%= @booking.garden.description %></em></h5> -->
-      <div class="card-picto">
-        <% if @booking.garden.swimming_pool == true %>
-          <i class="fas fa-tint on-swim picto"></i>
-        <% else %>
-          <i class="fas fa-tint off picto"></i>
-        <% end %>
-        <% if @booking.garden.barbecue == true %>
-          <i class="fas fa-fire on-fire picto"></i>
-        <% else %>
-          <i class="fas fa-fire off picto"></i>
-        <% end %>
-      </div>
-      <div class="card-price">
-        <h5><%= @booking.garden.price %>€</h5>
-      </div>
+  <div class='my-garden-card card-grid'>
+    <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
+    <h5 class="card-title"> <%= @booking.garden.name %> </h5>
+    <!-- <h5 class="card-description"><em><%= @booking.garden.description %></em></h5> -->
+    <div class="card-picto">
+      <% if @booking.garden.swimming_pool == true %>
+        <i class="fas fa-tint on-swim picto"></i>
+      <% else %>
+        <i class="fas fa-tint off picto"></i>
+      <% end %>
+      <% if @booking.garden.barbecue == true %>
+        <i class="fas fa-fire on-fire picto"></i>
+      <% else %>
+        <i class="fas fa-fire off picto"></i>
+      <% end %>
     </div>
-    <div class='my-garden-card book-display'>
-      <h5><strong>Start-date: </strong><%= @booking.start_date %></h5>
-      <br>
-      <h5><strong>End-date: </strong><%= @booking.end_date %></h5>
-      <br>
-      <% nights = (@booking.end_date - @booking.start_date).to_i %>
-      <h5><strong>Nights: </strong><%= nights %></h5>
-      <br>
-      <h5><strong>Total price: </strong><%= nights * @booking.garden.price %>€</h5>
-      <br>
-      <%= link_to 'Add a review', new_review_path(@booking), class: "btn btn-primary" %>
+    <div class="card-price">
+      <h5><%= @booking.garden.price %>€</h5>
     </div>
+  </div>
+  <div class="details-and-review-block">
+    <div class='book-display'>
+      <h3> Details</h3>
+      <p>From: <%= @booking.start_date %></p>
+      <p>To: <%= @booking.end_date %></p>
+      <p><% @booking.nb_nights %> days</p>
+      <p>Total price: <%= @booking.total_price %>€</p>
+    </div>
+    <div class='add-review-card'>
+      <h3>Add a review</h3>
+      <%= simple_form_for [@booking, @review], :url => reviews_path(@booking.id)  do |f| %>
+        <%= f.input :title %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :description %>
+        <%= f.submit class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
 </div>

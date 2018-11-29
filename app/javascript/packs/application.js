@@ -11,7 +11,6 @@ import places from 'places.js';
 initMapbox();
 loadDynamicBannerText();
 displayMap();
-// initAutocomplete();
 
 const addressInput = document.getElementById('garden_address');
 console.log(addressInput)
