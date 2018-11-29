@@ -1,18 +1,42 @@
 .show-container {
   margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .show-details-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .reviews-and-bookings-container {
   width: 70vw;
 }
 
+.garden-bookings-container {
+  background-color: white;
+  box-shadow: 0 0 5px lightgrey;
+  padding: 20px !important;
+  margin-top: 40px;
+}
+.garden-bookings-container h1 {
+  margin: 0;
+}
+
+.garden-reviews-container {
+  background-color: white;
+  box-shadow: 0 0 5px lightgrey;
+  padding: 20px !important;
+  margin-top: 40px;
+}
+
+.garden-reviews-container h1 {
+  margin: 0;
+}
+
 .show-content {
- height: 500px;
+ height: auto;
  width: 100%;
 }
 
@@ -46,9 +70,12 @@
   width: 30vw;
   background-color: white;
   box-shadow: 0 0 5px lightgrey;
-  padding: 10px;
-  margin-top: 10px;
-
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.show-booking-form h1 {
+  margin: 0px;
 }
 
 .show-btn {
