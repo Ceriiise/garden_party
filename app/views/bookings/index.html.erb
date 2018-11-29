@@ -19,7 +19,6 @@
         <p id='number-person'>X <%= booking.garden.max_guests %></p>
       </div>
 
-
       <%= link_to booking_path(booking) do%>
         <p class="btn btn-primary column-display-booking">Display</p>
       <% end %>
@@ -29,9 +28,6 @@
         data: { confirm: "Are you sure?" } do%>
         <p class="btn btn-danger column-delete-booking">Cancel</p>
       <% end %>
-
-
-
     </div>
   <% end %>
 </div>

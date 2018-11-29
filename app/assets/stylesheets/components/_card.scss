@@ -68,6 +68,28 @@
   box-shadow: 0 0 5px lightgrey;
 }
 
+.book-display {
+  padding: 10px;
+  z-index: 3;
+  grid-column: 1
+}
+
+.add-review-card {
+  padding: 10px;
+  width: 70;
+  grid-column: 2
+}
+
+.details-and-review-block {
+  width: 800px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0 0 5px lightgrey;
+}
+
 .my-garden-card:hover {
   box-shadow: 0 0 30px lightgrey;
 }

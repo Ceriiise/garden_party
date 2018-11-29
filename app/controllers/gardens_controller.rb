@@ -44,6 +44,8 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
     @bookings = Booking.where(garden_id: @garden)
     authorize @garden
+    @booking = Booking.new
+    authorize @booking
   end
 
   def create
