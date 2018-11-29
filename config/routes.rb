@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
+  # get 'profiles/show'
   # get 'reviews/new'
   # get 'reviews/create'
   # get 'bookings/index'

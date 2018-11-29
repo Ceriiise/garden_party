@@ -1,5 +1,25 @@
 <div class='show-container'>
   <div class='show-title'>
-    <h1>Hello</h1>
+    <h1>My profile</h1>
+
+      <% if @profile.photo == nil %>
+        <div class="card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('http://kitt.lewagon.com/placeholder/users/ssaunier')">
+        </div>
+      <% else %>
+      <div class="card"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= image_path @profile.photo, height: 300, width: 400, crop: :fill %>')">
+        </div>
+
+      <% end %>
+
+      <%= simple_form_for(@profile, url: profile_path, method: :patch ) do |f| %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit :submit %>
+      <% end %>
+
   </div>
 </div>

@@ -8,4 +8,12 @@ class ProfilePolicy < ApplicationPolicy
   def show?
     record.user == current_user
   end
+
+  def update?
+    true
+  end
+
+  def edit?
+    true
+  end
 end

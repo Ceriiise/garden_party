@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :gardens, dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
 end
