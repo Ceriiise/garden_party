@@ -14,6 +14,7 @@ if (disabled) {
   const disabledDates = JSON.parse(disabled.dataset.flatpickr)
   flatpickr("#range_start", {
     plugins: [new rangePlugin({ input: "#range_end"})],
+    minDate: "today",
     disable: disabledDates,
     dateFormat: "Y-m-d",
   })
