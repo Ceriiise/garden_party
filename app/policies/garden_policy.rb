@@ -21,6 +21,10 @@ class GardenPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def edit?
+    record.user == user
+  end
+
   def my_gardens?
     true
   end

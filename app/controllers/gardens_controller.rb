@@ -10,6 +10,12 @@ class GardensController < ApplicationController
   def index
     @gardens = policy_scope(Garden)
 
+    if params[:query].present?
+      @gardens_list = Garden.where("name @@ ?", "%#{params[:query]}%")
+    else
+      @gardens_list = Garden.all
+    end
+
     @gardens = Garden.where.not(latitude: nil, longitude: nil)
 
     @markers = @gardens.map do |garden|
@@ -49,6 +55,7 @@ class GardensController < ApplicationController
 
   def update
     @garden.update(garden_params)
+    authorize @garden
     redirect_to garden_path(@garden)
   end
 
