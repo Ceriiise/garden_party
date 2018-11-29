@@ -3,6 +3,7 @@
 }
 .booking-container {
   display: grid;
+  width: 800px;
   justify-content: space-around;
   align-items: center;
   padding-top: 10px;
@@ -11,15 +12,18 @@
   border-style: dashed;
   border-width: 1px;
   border-color:  $pink;
-  grid-template-columns: 3fr 2fr 1fr 1fr 1fr;
+  grid-template-columns: 3fr 2fr 1fr 1fr;
 }
 
+.inline-review {
+  display: flex;
+  align-items: center;
+}
 .bookings-container {
   padding: 0px;
-  display: grid;
-  margin-bottom: 5px;
-  height: 100px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .column-user-infos {
