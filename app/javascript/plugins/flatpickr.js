@@ -9,14 +9,13 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 // })
 
 const disabled = document.getElementById('dates-for-flatpickr')
-const disabledDates = JSON.parse(disabled.dataset.flatpickr)
 
-console.log(disabledDates)
-
-flatpickr("#range_start", {
-  plugins: [new rangePlugin({ input: "#range_end"})],
-  disable: disabledDates,
-  dateFormat: "Y-m-d",
-})
-
-console.log("flatpickr")
+if (disabled) {
+  const disabledDates = JSON.parse(disabled.dataset.flatpickr)
+  flatpickr("#range_start", {
+    plugins: [new rangePlugin({ input: "#range_end"})],
+    minDate: "today",
+    disable: disabledDates,
+    dateFormat: "Y-m-d",
+  })
+}
