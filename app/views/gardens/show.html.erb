@@ -56,9 +56,18 @@
                       <% else %>
                         <i class="fa fa-user bookings-garden-name"></i>
                       <% end %>
-                      <p id='number-person'>X <%= booking.garden.max_guests %></p>
+                    </div>
+                    <div class='column-price'>
+                      <%= booking.total_price %>€
                     </div>
                   </div>
+                    <div class='cancel-booking'>
+                      <%= link_to booking_path(booking),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } do%>
+                        <span class="btn btn-danger">Cancel</span>
+                      <% end %>
+                    </div>
                 </li>
               <% end %>
             <% end %>
