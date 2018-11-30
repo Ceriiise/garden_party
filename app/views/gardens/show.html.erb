@@ -23,6 +23,9 @@
           <%= link_to edit_garden_path(@garden) do %>
             <button class="btn btn-primary">edit</button>
           <% end %>
+          <%= link_to garden_path(@garden), method: :delete do %>
+            <button class="btn btn-danger">delete</button>
+          <% end %>
         <% end %>
       </div>
     </div>
