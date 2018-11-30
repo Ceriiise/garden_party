@@ -5,9 +5,10 @@ const displayMap = () => {
   const cards = document.querySelector(".card-container")
   const search = document.querySelector('.search');
 
-  map.classList.toggle('disabled');
-  cards.classList.toggle('big');
-  search.classList.toggle('large');
+  if (btn) {
+    map.classList.toggle('disabled');
+    cards.classList.toggle('big');
+    search.classList.toggle('large');
 
     btn.addEventListener('click', () => {
       console.log('hello');
@@ -15,6 +16,7 @@ const displayMap = () => {
       cards.classList.toggle('big');
       search.classList.toggle('large');
     });
+  }
   };
 
 export { displayMap };
