@@ -5,19 +5,12 @@ body {
   background-attachment:fixed;
 }
 
-input {
-  background-color: white !important;
-  z-index: 1000;
-  opacity: 1;
-}
-
 h1 {
   font-family: "Black Han Sans";
   color: $dark-blue;
   font-size: 32px;
   -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  // border-bottom: 10px solid $turquoise;
 }
 
 
@@ -52,7 +45,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: $turquoise;
+  // color: $turquoise;
 }
 
 .alert {
