@@ -3,7 +3,7 @@
 
 <!-- description -->
 
-    <div class='show-profile'>
+    <div class='show-profile slide-in-right'>
     <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
     <br>
       <%= @profile.description %>
@@ -16,7 +16,7 @@
 <!-- avatar -->
 
     <% if @profile.photo == nil %>
-      <div class="show-img slide-in-right"
+      <div class="show-img"
         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('http://kitt.lewagon.com/placeholder/users/ssaunier')">
       </div>

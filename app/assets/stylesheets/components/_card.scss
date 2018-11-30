@@ -86,6 +86,7 @@
   width: 800px;
   height: 400px;
   display: grid;
+  opacity: 0.8;
   grid-template-columns: 3fr 7fr;
   justify-content: space-around;
   background-color: white;
@@ -228,14 +229,14 @@
 .search-card h4 {
   color: white;
 }
+
 .new-garden-card{
-    background-color: white;
-    box-shadow: 0 0 5px lightgrey;
-    opacity: 0.8;
-    position: relative;
-    top: 13px;
-    width: 594px;
-    height: 602px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px lightgrey;
+  position: relative;
+  top: 13px;
+  width: 594px;
+  height: 602px;
 }
 
 @keyframes shake {
