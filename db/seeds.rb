@@ -55,7 +55,7 @@ philippine_garden = Garden.create(
   swimming_pool: false
   )
 
-philippine_garden.remote_photo_url = 'https://images.unsplash.com/photo-1425421598808-4a22ce59cc97?ixlib=rb-0.3.5&s=d719ff26022e3e1d449aeab0a120586f&auto=format&fit=crop&w=750&q=80'
+philippine_garden.remote_photo_url = 'https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0430a07a66c03018050e3c6077f688ec&auto=format&fit=crop&w=1500&q=80'
 philippine_garden.save
 
 antoine_garden = Garden.create(
@@ -112,7 +112,7 @@ philippine_garden_two = Garden.create(
   barbecue: true
   )
 
-philippine_garden_two.remote_photo_url = 'https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=675d706c330862ec0a0b01703de8abba&auto=format&fit=crop&w=1350&q=80'
+philippine_garden_two.remote_photo_url = 'https://images.unsplash.com/photo-1519671845924-1fd18db430b8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b08fa573c02c549a85ba451a24f5da3&auto=format&fit=crop&w=1552&q=80'
 philippine_garden_two.save
 
 antoine_garden_two = Garden.create(
