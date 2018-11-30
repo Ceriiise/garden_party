@@ -103,7 +103,7 @@ manon_garden_two.save
 
 philippine_garden_two = Garden.create(
   address: '160 rue Championnet, 75018 Paris',
-  name: 'Loft with rooftop',
+  name: 'Friend\'s home' ,
   description: "In the lower floor is a small library. About Goethe, Schiller, Shakespeare to the modern day. There is a radio with CD-part. A bathroom and a guest toilet are just 30 meters to the main house available for shared use.",
   price: 100,
   max_guests: 30,
@@ -132,7 +132,7 @@ antoine_garden_two.save
 
 francois_garden_two = Garden.create(
   address: '13 rue du Jura, 75013 Paris',
-  name: 'Beautiful loft',
+  name: 'Cozy garden',
   description: "Tree House with full private bath. Oak & Italian tile floors. Queen size cherry pencil post bed. Private gazebo with Swing beneath. 300 ft catwalks connecting to lunar Sauna and a 2nd Stone and Cedar Gazebo.",
   price: 100,
   max_guests: 30,
@@ -175,13 +175,14 @@ philippine_garden_third.save
 
 francois_garden_third = Garden.create(
   address: '32 rue Fondary, 75015 Paris',
-  name: 'Beautiful loft',
+  name: 'A forest in the city',
   description: "Although Made and his wife come to clean everyday it is impossible to get this house sterile, due to the openness and wind and just...nature. So this is not a house for a hosophobic!",
   price: 100,
   max_guests: 30,
   user: philippine,
   booked: false,
-  barbecue: true
+  barbecue: true,
+  swimming_pool: true
   )
 
 francois_garden_third.remote_photo_url = 'https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=675d706c330862ec0a0b01703de8abba&auto=format&fit=crop&w=750&q=80'
@@ -259,6 +260,59 @@ sixth_booking = Booking.create(
   nbguests: 7,
   total_price: 200,
   nb_nights: 2
+  )
+
+seventh_booking = Booking.create(
+  start_date: '2018-12-08',
+  end_date: '2018-12-12',
+  user: antoine,
+  garden: francois_garden_third,
+  nbguests: 12,
+  total_price: 200,
+  nb_nights: 2
+  )
+eighth_booking = Booking.create(
+  start_date: '2018-12-16',
+  end_date: '2018-12-22',
+  user: philippine,
+  garden: francois_garden_third,
+  nbguests: 5,
+  total_price: 200,
+  nb_nights: 2
+  )
+
+eighth_booking = Booking.create(
+  start_date: '2018-11-01',
+  end_date: '2018-11-05',
+  user: philippine,
+  garden: francois_garden_third,
+  nbguests: 5,
+  total_price: 200,
+  nb_nights: 2
+  )
+
+first_review = Review.create(
+  title: 'So cool !',
+  description: 'Manon was a super host !',
+  rating: 4,
+  user: antoine,
+  booking: fifth_booking
+  )
+
+second_review = Review.create(
+  title: 'Incredible experience',
+  description: "The greatest party of my life",
+  rating: 5,
+  user: philippine,
+  booking: sixth_booking
+  )
+
+third_review = Review.create(
+  title: 'Absolutely wonderful',
+  description: "I highly recommend this place",
+  rating: 5,
+  user: philippine,
+  booking: eighth_booking
   )
 
 puts "all done !"
