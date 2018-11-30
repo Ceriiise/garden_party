@@ -1,4 +1,5 @@
 <div class="bookings-container" id="booking-show">
+
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
@@ -26,26 +27,32 @@
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
-  <div class='my-garden-card card-grid'>
-    <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
-    <h5 class="card-title"> <%= @booking.garden.name %> </h5>
-    <!-- <h5 class="card-description"><em><%= @booking.garden.description %></em></h5> -->
-    <div class="card-picto">
-      <% if @booking.garden.swimming_pool == true %>
-        <i class="fas fa-tint on-swim picto"></i>
-      <% else %>
-        <i class="fas fa-tint off picto"></i>
-      <% end %>
-      <% if @booking.garden.barbecue == true %>
-        <i class="fas fa-fire on-fire picto"></i>
-      <% else %>
-        <i class="fas fa-fire off picto"></i>
-      <% end %>
+
+
+  <%= link_to garden_path(@booking.garden) do %>
+    <div class='my-garden-card card-grid'>
+      <%= cl_image_tag @booking.garden.photo, height: 300, width: 400, crop: :fill, class:'card-img' %>
+      <h5 class="card-title"> <%= @booking.garden.name %> </h5>
+      <!-- <h5 class="card-description"><em><%= @booking.garden.description %></em></h5> -->
+      <div class="card-picto">
+        <% if @booking.garden.swimming_pool == true %>
+          <i class="fas fa-tint on-swim picto"></i>
+        <% else %>
+          <i class="fas fa-tint off picto"></i>
+        <% end %>
+        <% if @booking.garden.barbecue == true %>
+          <i class="fas fa-fire on-fire picto"></i>
+        <% else %>
+          <i class="fas fa-fire off picto"></i>
+        <% end %>
+      </div>
+      <div class="card-price">
+        <h5><%= @booking.garden.price %>€</h5>
+      </div>
+
     </div>
-    <div class="card-price">
-      <h5><%= @booking.garden.price %>€</h5>
-    </div>
-  </div>
+  <% end %>
+
   <div class="details-and-review-block">
     <div class='book-display'>
       <h3> Details</h3>

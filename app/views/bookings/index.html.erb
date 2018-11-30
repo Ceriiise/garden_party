@@ -9,9 +9,10 @@
           <%= link_to booking_path(booking) do%>
             <li>
               <div class='inline-review'>
-                <div class='booking-container'>
+                <div class='booking-container-index'>
                   <div class='column-user-infos'>
-                    <%= booking.user.email %>
+                    <span class="card-avatar"> <%=cl_image_tag booking.garden.user.photo, height: 50, crop: :fill, radius: 50%> </span>
+                    <span style="margin-left: 10px"> <%=booking.garden.user.first_name%> </span>
                   </div>
                   <div class='column-booking-date'>
                     <p>from : <%= booking.start_date %></p>

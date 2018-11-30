@@ -18,8 +18,7 @@
 }
 
 .garden-bookings-container {
-  background-color: white;
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 5px lightgrey;
   padding: 20px !important;
   margin-bottom: 40px;
@@ -29,11 +28,12 @@
 }
 
 .index-bookings-container {
+  width: 1080px;
   justify-content: center;
-  opacity: 0.8;
   box-shadow: 0 0 5px lightgrey;
-  background: white;
-  margin : 40px 40px
+  background: rgba(255, 255, 255, 0.8);
+  margin : 40px 40px;
+  z-index: 1;
 }
 .index-bookings-container h1 {
   margin: 0;
@@ -209,6 +209,11 @@
           animation: slide-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.btn-edit-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
 
 @-webkit-keyframes slide-in-top {
   0% {
