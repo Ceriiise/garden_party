@@ -100,7 +100,6 @@
 
     <% if policy(@garden).edit? %>
       <div class='show-booking-form slide-in-right'>
-        <h1>You cannot book your garden</h1>
       </div>
     <% else %>
     <div class='show-booking-form slide-in-right' id="dates-for-flatpickr" data-flatpickr="<%= @dates.to_json %>">
