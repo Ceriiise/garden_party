@@ -10,7 +10,7 @@ import { activeLinks } from '../components/navbar';
 import places from 'places.js';
 
 initMapbox();
-loadDynamicBannerText();
+// loadDynamicBannerText();
 displayMap();
 activeLinks();
 
