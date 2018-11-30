@@ -7,6 +7,18 @@ francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.
 philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678')
 antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789')
 
+puts "adding photos to users"
+antoine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+antoine.save
+manon.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+manon.save
+francois.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+francois.save
+philippine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+philippine.save
+
+
+puts "photos added !"
 
 puts "Destroying all gardens"
 Garden.destroy_all
@@ -190,12 +202,12 @@ Booking.destroy_all
 
 puts "Seeding bookings"
 first_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
-  user: manon,
+  start_date: '2018-12-10',
+  end_date: '2018-12-12',
+  user: antoine,
   garden: manon_garden,
   nbguests: 3,
-  total_price: 300,
+  total_price: 200,
   nb_nights: 2
   )
 
@@ -203,10 +215,46 @@ second_booking = Booking.create(
   start_date: Date.new,
   end_date: Date.new,
   user: manon,
-  garden: philippine_garden,
+  garden: manon_garden,
   nbguests: 2,
   total_price: 100,
   nb_nights: 1
+  )
+third_booking = Booking.create(
+  start_date: Date.new,
+  end_date: Date.new,
+  user: francois,
+  garden: manon_garden,
+  nbguests: 5,
+  total_price: 200,
+  nb_nights: 2
+  )
+fourth_booking = Booking.create(
+  start_date: Date.new,
+  end_date: Date.new,
+  user: manon,
+  garden: manon_garden,
+  nbguests: 6,
+  total_price: 200,
+  nb_nights: 2
+  )
+fifth_booking = Booking.create(
+  start_date: Date.new,
+  end_date: Date.new,
+  user: antoine,
+  garden: manon_garden,
+  nbguests: 12,
+  total_price: 200,
+  nb_nights: 2
+  )
+sixth_booking = Booking.create(
+  start_date: Date.new,
+  end_date: Date.new,
+  user: philippine,
+  garden: manon_garden,
+  nbguests: 7,
+  total_price: 200,
+  nb_nights: 2
   )
 
 puts "all done !"
