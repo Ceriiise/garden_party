@@ -8,7 +8,9 @@ import { activeLinks } from '../components/navbar';
 // import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import places from 'places.js';
+import { activeBtn } from '../components/btn';
 
+activeBtn();
 initMapbox();
 // loadDynamicBannerText();
 displayMap();
