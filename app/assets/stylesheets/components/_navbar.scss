@@ -116,16 +116,6 @@ $duration: 1000;
   position: relative;
 }
 
-.confetti {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 7px;
-  overflow: hidden;
-}
-
 .confetti-piece {
   position: absolute;
   width: 8px;
