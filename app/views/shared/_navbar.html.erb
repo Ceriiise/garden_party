@@ -1,70 +1,78 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to gardens_path, class: "navbar-wagon-brand" do %>
-    <div class="logo">Garden Party</div>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "Add a garden", new_garden_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My gardens", my_gardens_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to profile_path(current_user) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to gardens_path, class: "navbar-wagon-brand" do %>
+      <div class="logo">Garden Party</div>
     <% end %>
-  </div>
+<!--     <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div> -->
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Add a garden", new_garden_path%>
-        <li><%= link_to "My gardens", my_gardens_path%>
-        <li><%= link_to "My bookings", bookings_path%>
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-          <% end %>
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-          <% end %>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-          <% end %>
-      </ul>
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+        <!-- Links when logged in -->
+        <%= link_to "Add a garden", new_garden_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-link" %>
+        <%= link_to "My gardens", my_gardens_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-link" %>
+        <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link", id: "navbar-link" %>
+
+        <!-- Avatar with dropdown menu -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to profile_path(current_user) do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
     </div>
-  </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "Add a garden", new_garden_path%>
+          <li><%= link_to "My gardens", my_gardens_path%>
+          <li><%= link_to "My bookings", bookings_path%>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <% end %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+        </ul>
+      </div>
+    </div>
 </div>
 

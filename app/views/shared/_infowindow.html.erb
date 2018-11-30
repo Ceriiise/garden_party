@@ -3,30 +3,3 @@
 <%= link_to garden_path(garden) do %>
   <p><%= garden.name %></p>
 <% end %>
-
-
-<!--
-<div class='card-container'>
-  <%#= link_to garden_path(garden.id) do %>
-    <div class='card-map card-grid'>
-      <%#= cl_image_tag garden.photo, height: 50, crop: :fill, class:'card-img' %>
-      <h5 class="card-title"> <%= garden.address %> </h5>
-      <div class="card-picto">
-        <%# if garden.swimming_pool == true %>
-          <i class="fas fa-tint on-swim picto"></i>
-        <%# else %>
-          <i class="fas fa-tint off picto"></i>
-        <%# end %>
-        <%# if garden.barbecue == true %>
-          <i class="fas fa-fire on-fire picto"></i>
-        <%# else %>
-          <i class="fas fa-fire off picto"></i>
-        <%# end %>
-      </div>
-      <div class="card-price">
-        <h5><%= garden.price %>€</h5>
-      </div>
-    </div>
-  <%# end %>
-</div>
- -->
