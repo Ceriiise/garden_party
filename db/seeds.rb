@@ -10,11 +10,11 @@ antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'ant
 puts "adding photos to users"
 antoine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
 antoine.save
-manon.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+manon.remote_photo_url = "https://raw.githubusercontent.com/antoinefourgous/pictures-project/master/IMG_6298.JPG"
 manon.save
-francois.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+francois.remote_photo_url = "https://raw.githubusercontent.com/antoinefourgous/pictures-project/master/image.png"
 francois.save
-philippine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
+philippine.remote_photo_url = "https://raw.githubusercontent.com/antoinefourgous/pictures-project/master/Philippine.jpg"
 philippine.save
 
 
