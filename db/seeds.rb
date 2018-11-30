@@ -6,9 +6,9 @@ Review.destroy_all
 
 puts "Seeding users"
 manon = User.create!(first_name: 'Manon', last_name: 'Charron', email: 'manoncharron8@gmail.com', password: '123456', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
-francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.hameau@gmail.com', password: '234567')
-philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678')
-antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789')
+francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.hameau@gmail.com', password: '234567', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
 
 puts "adding photos to users"
 antoine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
