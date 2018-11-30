@@ -1,5 +1,6 @@
 .footer {
   background: white;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +12,7 @@
   z-index: 10000 !important;
   bottom: 0px;
 }
+
 .footer-links {
   display: flex;
   align-items: center;

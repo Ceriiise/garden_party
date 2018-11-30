@@ -18,7 +18,7 @@
 }
 
 .large {
-  width: calc(100% - 60px) !important;
+  width: calc(100% - 175px) !important;
 }
 
 @media screen and (max-width: 950px) {
@@ -220,12 +220,7 @@
   box-shadow: 0 0 30px lightgrey;
   opacity: 0.95;
 }
-.reco {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-between;
-  margin: 0 !important;
-}
+
 .search-card h4 {
   color: white;
 }
