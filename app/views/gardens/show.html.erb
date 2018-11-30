@@ -3,13 +3,10 @@
     <%= cl_image_tag @garden.photo, class:'show-img slide-in-right'%>
     <div class='show-card slide-in-left'>
       <h1><%= @garden.name %></h1>
-      <%= link_to new_garden_booking_path(@garden) do%>
-        <button class="btn btn-primary show-btn">Book</button>
-      <% end %>
   <div class='show-items'>
     <p id='show-desc'>
-      <strong>Description: <br></strong>
       <%= @garden.description %> <br><br>
+      <strong> <%= @garden.price %>€  </strong> <br><br>
       <% if @garden.swimming_pool == true %>
         <i class="fas fa-tint on-swim picto"></i>
       <% else %>
@@ -42,7 +39,7 @@
 
             <ul>
               <% @garden.bookings.each do |booking| %>
-                <%= link_to booking_path(booking) do%>
+
                   <li>
                     <div class='inline-review'>
                       <div class='booking-container'>
@@ -50,30 +47,18 @@
                           <%= booking.user.email %>
                         </div>
                         <div class='column-booking-date'>
-                          <p>from : <%= booking.start_date %></p>
-                          <p>to : <%= booking.end_date %></p>
+                          <span>from <%= booking.start_date %></span>
+                          <span>to <%= booking.end_date %></span>
                         </div>
                         <div id="people-number" class="column-number-people-max">
-                          <% if booking.garden.max_guests > 1 %>
-                            <i class="fas fa-users bookings-garden-name"></i>
-                          <% else %>
-                            <i class="fa fa-user bookings-garden-name"></i>
-                          <% end %>
+                            <i class="fas fa-users bookings-garden-name"></i>  x <%= booking.nbguests %>
                         </div>
                         <div class='column-price'>
-                          <%= @garden.price %>€
+                          <%= @garden.price * booking.nb_nights %>€
                         </div>
-                      </div>
-                      <div class='cancel-booking'>
-                        <%= link_to booking_path(booking),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" } do%>
-                          <p class="btn btn-danger">Cancel</p>
-                        <% end %>
                       </div>
                     </div>
                   </li>
-                <% end %>
               <% end %>
             </ul>
 
@@ -82,31 +67,32 @@
 
       <div class='garden-reviews-container slide-in-bottom'>
         <h1>Reviews: </h1>
-        <div class="review-cards">
+
           <% @garden.bookings.each do |booking| %>
             <% if booking.review.present? %>
-              <%= link_to booking_path(booking) do%>
-                <div class='booking-container row'>
-                  <div class='column-user-infos'>
-                    <%= booking.review.user.email %>
+                <div class='review-container'>
+                  <div class='review-col1'>
+                     <%= booking.review.user.last_name %>
                   </div>
-                  <div class='review-description'>
+                  <div class='review-col2'>
+                    <%= booking.review.user.first_name %>
+                  </div>
+                  <div class='review-col3'>
                     <em>"<%= booking.review.description  %>"</em>
                   </div>
-                  <div class='review-rating'>
+                  <div class='review-col4'>
                     <% booking.review.rating.times do %>
                       <i class="fas fa-star"></i>
                     <% end %>
                     <%  (5 - booking.review.rating).times do %>
                       <i class="far fa-star"></i>
                     <% end %>
-                  </span>
                   </div>
                 </div>
-              <% end %>
             <% end %>
           <% end %>
-        </div>
+
+
       </div>
     </div>
 
