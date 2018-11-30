@@ -212,8 +212,8 @@ first_booking = Booking.create(
   )
 
 second_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
+  start_date: '2018-12-15',
+  end_date: '2018-12-16',
   user: manon,
   garden: manon_garden,
   nbguests: 2,
@@ -221,8 +221,8 @@ second_booking = Booking.create(
   nb_nights: 1
   )
 third_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
+  start_date: '2018-12-17',
+  end_date: '2018-12-19',
   user: francois,
   garden: manon_garden,
   nbguests: 5,
@@ -230,8 +230,8 @@ third_booking = Booking.create(
   nb_nights: 2
   )
 fourth_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
+  start_date: '2018-12-20',
+  end_date: '2018-12-22',
   user: manon,
   garden: manon_garden,
   nbguests: 6,
@@ -239,8 +239,8 @@ fourth_booking = Booking.create(
   nb_nights: 2
   )
 fifth_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
+  start_date: '2018-12-23',
+  end_date: '2018-12-25',
   user: antoine,
   garden: manon_garden,
   nbguests: 12,
@@ -248,8 +248,8 @@ fifth_booking = Booking.create(
   nb_nights: 2
   )
 sixth_booking = Booking.create(
-  start_date: Date.new,
-  end_date: Date.new,
+  start_date: '2018-12-26',
+  end_date: '2018-12-28',
   user: philippine,
   garden: manon_garden,
   nbguests: 7,
