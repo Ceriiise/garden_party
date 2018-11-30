@@ -14,7 +14,7 @@ activeBtn();
 initMapbox();
 // loadDynamicBannerText();
 displayMap();
-activeLinks();
+// activeLinks();
 
 const addressInput = document.getElementById('garden_address');
 if (addressInput) {
