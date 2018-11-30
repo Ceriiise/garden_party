@@ -70,6 +70,29 @@
   box-shadow: 0 0 5px lightgrey;
 }
 
+.show-profile {
+  display: flex;
+  height: 30vw;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px;
+  grid-column: 3;
+  grid-row: 1;
+  background: white;
+  opacity: 0.8;
+  margin: 0 !important;
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.show-profile-img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  grid-row: 1;
+  grid-column: 1;
+}
+
 .show-booking-form {
   width: 30vw;
   background-color: white;

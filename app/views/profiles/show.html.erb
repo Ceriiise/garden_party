@@ -1,27 +1,27 @@
 <div class='show-container'>
   <div class='show-content show-grid'>
 
+<!-- description -->
+
+    <div class='show-profile'>
+    <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
+    <br>
+      <%= @profile.description %>
+    </div>
+    <br>
+    <% if policy(@profile).edit? %>
+    <%= link_to "Edit my profile", edit_profile_path(@profile), class:"btn btn-primary"%>
+    <% end %>
+
+<!-- avatar -->
+
     <% if @profile.photo == nil %>
-      <div class="show-img"
+      <div class="show-img slide-in-right"
         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('http://kitt.lewagon.com/placeholder/users/ssaunier')">
       </div>
     <% else %>
-      <div class="show-img"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= image_path @profile.photo %>')">
-      </div>
+      <%= cl_image_tag @profile.photo, class:'show-profile-img slide-in-left'%>
     <% end %>
-
-    <div class='show-card'>
-      <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
-      <div class='show-user-card'>
-        <%= @profile.description %>
-      </div>
-      <br>
-      <br>
-      <%= link_to "Edit my profile", edit_profile_path(@profile), class:"btn btn-primary"%>
-    </div>
   </div>
 </div>
-

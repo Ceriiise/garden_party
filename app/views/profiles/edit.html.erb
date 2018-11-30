@@ -3,27 +3,32 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="show-profile-form">
         <div class='title-setup'>
-          <h1>My Profile</h1>
+          <h1>Edit my informations</h1>
         </div>
 
+<!-- Avatar -->
+
         <% if @profile.photo == nil %>
-          <div class="avatar-profile"
+          <div class="card"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
              url('http://kitt.lewagon.com/placeholder/users/ssaunier')">
           </div>
         <% else %>
-          <div class="avatar-profile"
-              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-               url('<%= image_path @profile.photo, height: 300, width: 400, crop: :fill %>')">
-          </div>
-
+          <%= cl_image_tag @profile.photo, class:'card'%>
         <% end %>
+
+<!-- Upload photo -->
 
         <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.submit :submit %>
         <% end %>
+
+<!-- Edit password -->
+        <%= link_to "Change my password ?", edit_user_registration_path, class:"btn btn-primary"%>
+
+<!-- Edit first_name, last_name, description -->
 
         <div>
           <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
