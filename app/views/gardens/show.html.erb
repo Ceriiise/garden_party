@@ -44,7 +44,8 @@
                     <div class='inline-review'>
                       <div class='booking-container'>
                         <div class='column-user-infos'>
-                          <%= booking.user.email %>
+                          <div class="card-avatar"> <%=booking.user.photo%> </div>
+                          <div> <%=booking.user.first_name%> </div>
                         </div>
                         <div class='column-booking-date'>
                           <span>from <%= booking.start_date %></span>
@@ -74,7 +75,8 @@
             <% if booking.review.present? %>
                 <div class='review-container'>
                   <div class='review-col1'>
-                     <%= booking.review.user.last_name %>
+                    <div class="card-avatar"> <%=booking.user.photo%> </div>
+                    <div> <%=booking.user.first_name%> </div>
                   </div>
                   <div class='review-col2'>
                     <%= booking.review.user.first_name %>

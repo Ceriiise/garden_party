@@ -1,8 +1,11 @@
 puts "Destroying all users"
 User.destroy_all
 
+puts "Destroying all reviews"
+Review.destroy_all
+
 puts "Seeding users"
-manon = User.create!(first_name: 'Manon', last_name: 'Charron', email: 'manoncharron8@gmail.com', password: '123456')
+manon = User.create!(first_name: 'Manon', last_name: 'Charron', email: 'manoncharron8@gmail.com', password: '123456', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
 francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.hameau@gmail.com', password: '234567')
 philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678')
 antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789')
@@ -25,7 +28,7 @@ manon_garden = Garden.create(
   barbecue: true
   )
 
-manon_garden.remote_photo_url = 'https://images.unsplash.com/photo-1519671619280-fd2b53b38ec2?ixlib=rb-0.3.5&s=07f186f7e3890c44295792902b78a246&auto=format&fit=crop&w=750&q=80'
+manon_garden.remote_photo_url = 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=605dda29d7945345968d2dfb3eeb672e&auto=format&fit=crop&w=750&q=80'
 manon_garden.save
 
 philippine_garden = Garden.create(
@@ -69,7 +72,7 @@ francois_garden = Garden.create(
   swimming_pool: true,
   )
 
-francois_garden.remote_photo_url = 'https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=605dda29d7945345968d2dfb3eeb672e&auto=format&fit=crop&w=750&q=80'
+francois_garden.remote_photo_url = 'https://images.unsplash.com/photo-1519671619280-fd2b53b38ec2?ixlib=rb-0.3.5&s=07f186f7e3890c44295792902b78a246&auto=format&fit=crop&w=750&q=80'
 francois_garden.save
 
 manon_garden_two = Garden.create(
@@ -186,6 +189,7 @@ antoine_garden_third = Garden.create(
 antoine_garden_third.remote_photo_url = 'https://images.unsplash.com/photo-1520869309377-88c9274a27c2?ixlib=rb-0.3.5&s=dfe19ac66d459b6bbaf3f5cefb3e0618&auto=format&fit=crop&w=750&q=80'
 antoine_garden_third.save
 
+puts "destroying all bookings"
 Booking.destroy_all
 
 puts "Seeding bookings"
