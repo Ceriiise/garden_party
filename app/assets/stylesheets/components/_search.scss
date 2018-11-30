@@ -36,6 +36,10 @@
 .search-btn:hover {
   opacity: 0.8;
 }
+.search-btn select {
+  border: none;
+  box-shadow: none;
+}
 
 .active {
   background: $dark-blue;

@@ -15,17 +15,39 @@
   <% end %>
 </div>
 
-  <div class='reco'>
-    <%= link_to gardens_path do %>
-      <button class='search-btn' id='all'>All gardens</button>
-    <% end %>
-    <%= link_to gardens_path(swim: "true") do %>
-      <button class='search-btn' id='swim'>Swimming Pool</button>
-    <% end %>
-    <%= link_to gardens_path(bbq: "true") do %>
-      <button class='search-btn' id='bbq'>Barbecue</button>
-    <% end %>
-  </div>
+    <div class='reco'>
+      <% if @params == 'bbq' %>
+        <%= link_to gardens_path do %>
+          <button class='search-btn' id='all'>All gardens</button>
+        <% end %>
+        <%= link_to gardens_path(swim: "true") do %>
+          <button class='search-btn' id='swim'>Swimming Pool</button>
+        <% end %>
+        <%= link_to gardens_path(bbq: "true") do %>
+          <button class='search-btn active' id='bbq'>Barbecue</button>
+        <% end %>
+      <% elsif @params == 'swim' %>
+        <%= link_to gardens_path do %>
+          <button class='search-btn' id='all'>All gardens</button>
+        <% end %>
+        <%= link_to gardens_path(swim: "true") do %>
+          <button class='search-btn active' id='swim'>Swimming Pool</button>
+        <% end %>
+        <%= link_to gardens_path(bbq: "true") do %>
+          <button class='search-btn' id='bbq'>Barbecue</button>
+        <% end %>
+      <% else %>
+        <%= link_to gardens_path do %>
+          <button class='search-btn active' id='all'>All gardens</button>
+        <% end %>
+        <%= link_to gardens_path(swim: "true") do %>
+          <button class='search-btn' id='swim'>Swimming Pool</button>
+        <% end %>
+        <%= link_to gardens_path(bbq: "true") do %>
+          <button class='search-btn' id='bbq'>Barbecue</button>
+        <% end %>
+      <% end %>
+    </div>
 
 <div class='map-container'>
   <div class='card-container'>
