@@ -17,13 +17,13 @@
 
   <div class='reco'>
     <%= link_to gardens_path do %>
-      <button>All the garden</button>
+      <button class='search-btn' id='all'>All gardens</button>
     <% end %>
     <%= link_to gardens_path(swim: "true") do %>
-      <button>Swimming Pool</button>
+      <button class='search-btn' id='swim'>Swimming Pool</button>
     <% end %>
     <%= link_to gardens_path(bbq: "true") do %>
-      <button>Barbecue</button>
+      <button class='search-btn' id='bbq'>Barbecue</button>
     <% end %>
   </div>
 

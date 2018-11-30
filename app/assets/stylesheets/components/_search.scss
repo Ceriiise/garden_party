@@ -24,3 +24,19 @@
   justify-content: left;
   margin-left: 30px;
 }
+
+.search-btn {
+  margin-right: 15px;
+  background: $pink;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 10px;
+}
+.search-btn:hover {
+  opacity: 0.8;
+}
+
+.active {
+  background: $dark-blue;
+}
