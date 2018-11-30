@@ -17,8 +17,10 @@ class GardensController < ApplicationController
             "
       @gardens_list = Garden.where(sql_query, query: "%#{params[:query]}%")
     elsif params[:swim].present?
+      @params = 'swim'
       @gardens_list = Garden.where(swimming_pool: true) if params[:swim] == 'true'
     elsif params[:bbq].present?
+      @params = 'bbq'
       @gardens_list = Garden.where(barbecue: true) if params[:bbq] == 'true'
     else
       @gardens_list = Garden.all
