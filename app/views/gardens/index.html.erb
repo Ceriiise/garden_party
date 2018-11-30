@@ -15,26 +15,21 @@
   <% end %>
 </div>
 
+  <div class='reco'>
+    <%= link_to gardens_path do %>
+      <button>All the garden</button>
+    <% end %>
+    <%= link_to gardens_path(swim: "true") do %>
+      <button>Swimming Pool</button>
+    <% end %>
+    <%= link_to gardens_path(bbq: "true") do %>
+      <button>Barbecue</button>
+    <% end %>
+  </div>
+
 <div class='map-container'>
   <div class='card-container'>
 
-    <div class='search reco'>
-      <%= link_to gardens_path do %>
-        <div class='top-card search-card'>
-          <h4>All the gardens</h4>
-        </div>
-      <% end %>
-      <%= link_to gardens_path(swim: "true") do %>
-        <div class='swim-card search-card'>
-          <h4>Swimming pool</h4>
-        </div>
-      <% end %>
-      <%= link_to gardens_path(bbq: "true") do %>
-        <div class='bbq-card search-card'>
-          <h4>Barbecue</h4>
-        </div>
-      <% end %>
-    </div>
 
       <% @gardens_list.each do |garden| %>
         <%= link_to garden_path(garden.id) do %>

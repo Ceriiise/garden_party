@@ -98,6 +98,11 @@
       </div>
     </div>
 
+    <% if policy(@garden).edit? %>
+      <div class='show-booking-form slide-in-right'>
+        <h1>You cannot book your garden</h1>
+      </div>
+    <% else %>
     <div class='show-booking-form slide-in-right' id="dates-for-flatpickr" data-flatpickr="<%= @dates.to_json %>">
       <h1>Book this garden</h1>
         <%= simple_form_for [@garden, @booking]  do |f| %>
@@ -107,6 +112,8 @@
           <%= f.button :submit, class: 'btn btn-primary'%>
         <% end %>
     </div>
+    <% end %>
+
   </div>
 </div>
 
