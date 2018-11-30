@@ -9,9 +9,6 @@
       <%= @profile.description %>
     </div>
     <br>
-    <% if policy(@profile).edit? %>
-    <%= link_to "Edit my profile", edit_profile_path(@profile), class:"btn btn-primary"%>
-    <% end %>
 
 <!-- avatar -->
 
@@ -23,5 +20,13 @@
     <% else %>
       <%= cl_image_tag @profile.photo, class:'show-profile-img slide-in-left'%>
     <% end %>
+
+<!-- btn edit -->
+
+    <div class='btn-edit-profile slide-in-left'>
+      <% if policy(@profile).edit? %>
+      <%= link_to "Edit my profile", edit_profile_path(@profile), class:"btn btn-primary"%>
+      <% end %>
+    </div>
   </div>
 </div>
