@@ -21,10 +21,12 @@
     <p id='show-desc'><strong>Address: <br></strong><em><%= @garden.address %></em></p>
         <% if policy(@garden).edit? %>
           <%= link_to edit_garden_path(@garden) do %>
-            <button class="btn btn-primary">edit</button>
+            <button class="btn btn-primary">Edit</button>
           <% end %>
-          <%= link_to garden_path(@garden), method: :delete do %>
-            <button class="btn btn-danger">delete</button>
+          <%= link_to garden_path(@garden),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do%>
+          <p class="btn btn-danger">Delete</p>
           <% end %>
         <% end %>
       </div>
