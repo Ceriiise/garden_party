@@ -2,6 +2,7 @@
   margin-right: 0px;
 }
 .booking-container {
+  z-index: 100;
   display: grid;
   width: 900px;
   justify-content: space-around;
@@ -14,6 +15,25 @@
   border-width: 1px;
   border-color:  $pink;
   grid-template-columns: 3fr 3fr 1fr 1fr;
+  opacity: 1 !important;
+}
+
+.booking-container-index {
+  z-index: 100;
+  display: grid;
+  width: 950px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  opacity: 1 !important;
+  margin-right: 20px;
+  background-color: white;
+  border-style: dashed;
+  border-width: 1px;
+  border-color:  $pink;
+  grid-template-columns: 3fr 3fr 1fr 1fr;
+  opacity: 1 !important;
 }
 
 .review-container {
