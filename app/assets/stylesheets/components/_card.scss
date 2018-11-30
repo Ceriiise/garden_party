@@ -94,7 +94,8 @@
 
 .card:hover {
   box-shadow: 0 0 30px lightgrey;
-  animation: shake 0.5s;
+  transform: rotate(0deg) !important;
+  // animation: shake 0.5s;
     // animation-iteration-count: infinite;
 }
 
