@@ -12,4 +12,5 @@ class ReviewsPolicy < ApplicationPolicy
   def create?
     new?
   end
+
 end

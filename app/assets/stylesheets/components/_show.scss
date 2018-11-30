@@ -9,6 +9,7 @@
   flex-direction: row;
   width: calc(100% - 40px);
   margin-left: 30px;
+  margin-bottom: 40px;
 }
 
 .reviews-and-bookings-container {
@@ -24,6 +25,14 @@
   margin-bottom: 40px;
 }
 .garden-bookings-container h1 {
+  margin: 0;
+}
+
+.index-bookings-container {
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+.index-bookings-container h1 {
   margin: 0;
 }
 

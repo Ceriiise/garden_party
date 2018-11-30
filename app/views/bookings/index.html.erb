@@ -1,35 +1,42 @@
-<div class='home-header'>
-  <h1>My bookings</h1>
-</div>
+<div class="col-sm-10 offset-sm-1">
+  <div class='home-header'>
+    <h1>My bookings</h1>
+  </div>
 
-<div class='bookings-container slide-in-top'>
-  <% @bookings.each do |booking| %>
-    <div class='booking-container row'>
-      <%= link_to booking.garden.name, garden_path(booking.garden), class: "bookings-garden-name column-name" %>
-      <div class='column-booking-date'>
-        <p>Starts : <%= booking.start_date %></p>
-        <p>End : <%= booking.end_date %></p>
-      </div>
-      <div id="people-number" class="column-number-people-max">
-        <% if booking.garden.max_guests > 1 %>
-          <i class="fas fa-users bookings-garden-name"></i>
-        <% else %>
-          <i class="fa fa-user bookings-garden-name"></i>
+  <div class='index-bookings-container'>
+      <ul>
+        <% @bookings.each do |booking| %>
+          <%= link_to booking_path(booking) do%>
+            <li>
+              <div class='inline-review'>
+                <div class='booking-container'>
+                  <div class='column-user-infos'>
+                    <%= booking.user.email %>
+                  </div>
+                  <div class='column-booking-date'>
+                    <p>from : <%= booking.start_date %></p>
+                    <p>to : <%= booking.end_date %></p>
+                  </div>
+                  <div id="people-number" class="column-number-people-max">
+                      <i class="fas fa-users bookings-garden-name"></i>  x <%= booking.nbguests %>
+                  </div>
+                  <div class='column-price'>
+                    <%= booking.garden.price * booking.nb_nights %>€
+                  </div>
+                </div>
+                <div class='cancel-booking'>
+                  <%= link_to booking_path(booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do%>
+                    <p class="btn btn-danger">Cancel</p>
+                  <% end %>
+                </div>
+              </div>
+            </li>
+          <% end %>
         <% end %>
-        <p id='number-person'>X <%= booking.garden.max_guests %></p>
-      </div>
-
-      <%= link_to booking_path(booking) do%>
-        <p class="btn btn-primary column-display-booking">Display</p>
-      <% end %>
-
-      <%= link_to booking_path(booking),
-        method: :delete,
-        data: { confirm: "Are you sure?" } do%>
-        <p class="btn btn-danger column-delete-booking">Cancel</p>
-      <% end %>
-    </div>
-  <% end %>
+      </ul>
+  </div>
 </div>
 
 
