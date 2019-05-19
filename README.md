@@ -30,7 +30,7 @@ rails db:seed
 rails s
 ```
 
-Vous pouvez accéder au site [ici](https://git.heroku.com/newgardenparty.git)
+Vous pouvez accéder au site [ici](https://newgardenparty.herokuapp.com)
 
 Pour vous connecter:
 ```
