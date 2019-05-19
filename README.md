@@ -1,4 +1,4 @@
-#GARDEN PARTY
+# GARDEN PARTY
 
 Ce projet a été réalisé en 5 jours dans le cadre de la formation du Wagon par:
 
