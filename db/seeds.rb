@@ -1,14 +1,25 @@
-puts "Destroying all users"
-User.destroy_all
-
 puts "Destroying all reviews"
 Review.destroy_all
+puts "Reviews : destroyed"
+
+puts "Destroying all users"
+User.destroy_all
+puts "Users : destroyed"
+
+puts "destroying all bookings"
+Booking.destroy_all
+puts "Bookings : destroyed"
+
+puts "Destroying all gardens"
+Garden.destroy_all
+puts "Gardens : destroyed"
+
 
 puts "Seeding users"
-manon = User.create!(first_name: 'Manon', last_name: 'Charron', email: 'manoncharron8@gmail.com', password: '123456', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
-francois = User.create!(first_name: 'François', last_name: 'Hameau', email: 'f.hameau@gmail.com', password: '234567', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
-philippine = User.create!(first_name: 'Philippine', last_name: 'Berton', email: 'alyssa_phi@hotmail.com', password: '345678', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
-antoine = User.create!(first_name: 'Antoine', last_name: 'Fourgous', email: 'antoine.fourgous1997@gmail.com', password: '456789', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+philippine = User.create!(first_name: 'Philippine', last_name: 'Bouton', email: 'philippine@gmail.com', password: '123456', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+manon = User.create!(first_name: 'Manon', last_name: 'Dupont', email: 'manon@gmail.com', password: '123456', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+francois = User.create!(first_name: 'François', last_name: 'Chapeau', email: 'françois@gmail.com', password: '345678', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
+antoine = User.create!(first_name: 'Antoine', last_name: 'Fourge', email: 'antoine@gmail.com', password: '456789', description: "I'm a lover of performing arts, the beach, gardening, good food and wine and am happiest with sand between my toes.I'm a total foodie - love to cook, love to eat and try new things. I am a huge fan of garden parties - I have a house that I rent out when I go away on holiday.")
 
 puts "adding photos to users"
 antoine.remote_photo_url = "https://avatars3.githubusercontent.com/u/43874838?s=400&u=ece6d5fb7213c309fba0a49c9a3dfc65f3d81d42&v=4"
@@ -22,9 +33,6 @@ philippine.save
 
 
 puts "photos added !"
-
-puts "Destroying all gardens"
-Garden.destroy_all
 
 
 puts "Seeding gardens"
@@ -202,8 +210,7 @@ antoine_garden_third = Garden.create(
 antoine_garden_third.remote_photo_url = 'https://images.unsplash.com/photo-1520869309377-88c9274a27c2?ixlib=rb-0.3.5&s=dfe19ac66d459b6bbaf3f5cefb3e0618&auto=format&fit=crop&w=750&q=80'
 antoine_garden_third.save
 
-puts "destroying all bookings"
-Booking.destroy_all
+puts "gardens added !"
 
 puts "Seeding bookings"
 first_booking = Booking.create(
@@ -315,5 +322,6 @@ third_review = Review.create(
   booking: eighth_booking
   )
 
+puts "Bookings added"
 puts "all done !"
 

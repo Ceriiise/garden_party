@@ -21,11 +21,11 @@ if (addressInput) {
   places({ container: addressInput });
 }
 
-const cards = document.querySelectorAll(".card.card-grid");
-let number = Math.floor((Math.random() * 5) + 0);
+// const cards = document.querySelectorAll(".card.card-grid");
+// let number = Math.floor((Math.random() * 5) + 0);
 
-cards.forEach((card) => {
-  console.log(number)
-  card.style.transform = "rotate(" + number + "deg)";
-  number += Math.floor((Math.random() * ( Math.random() < 0.5 ? (Math.floor(Math.random() * -5) - 3) :  (Math.floor(Math.random() * 5) + 3) )));
-})
+// cards.forEach((card) => {
+//   console.log(number)
+//   card.style.transform = "rotate(" + number + "deg)";
+//   number += Math.floor((Math.random() * ( Math.random() < 0.5 ? (Math.floor(Math.random() * -5) - 3) :  (Math.floor(Math.random() * 5) + 3) )));
+// })
