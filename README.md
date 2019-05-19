@@ -30,6 +30,8 @@ rails db:seed
 rails s
 ```
 
+Vous pouvez accéder au site [ici](https://git.heroku.com/newgardenparty.git)
+
 Pour vous connecter:
 ```
 login : philippine@gmail.com
