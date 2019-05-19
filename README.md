@@ -7,9 +7,9 @@ Ce projet a été réalisé en 5 jours dans le cadre de la formation du Wagon pa
 * [Antoine Fourgous](https://github.com/antoinefourgous)
 * [Philippine Berton](https://github.com/Ceriiise)
 
-Le site est développé en Ruby : 2.4.5 et en Rails 5.2.2.1
+Le site est développé en Ruby 2.4.5 et en Rails 5.2.2.1
 
-Les gem utilisées sont :
+Les gems utilisées sont :
 
 * 'devise'
 * 'simple_form'
