@@ -83,3 +83,9 @@ production:
   database: garden_party_production
   username: garden_party
   password: <%= ENV['GARDEN_PARTY_DATABASE_PASSWORD'] %>
+
+`staging:
+  <<: *default
+  database: newgardenparty-staging
+  username: garden_party
+  password: <%= ENV['GARDEN_PARTY_DATABASE_PASSWORD'] %>`
